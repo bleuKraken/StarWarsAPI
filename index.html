@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- LOCAL CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>StarWars Info</title>
+</head>
+
+
+<body>
+<!-- STORY BEGINS HERE -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center py-3">
+          Star Wars InfoSite
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  "name": "Luke Skywalker",
+  "height": "172",
+  "mass": "77",
+  "hair_color": "blond",
+  "skin_color": "fair",
+  "eye_color": "blue",
+  "birth_year": "19BBY",
+  "gender": "male",
+  -->
+  <!-- INFO OF CHARACTER -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4 border person">
+
+        <span id="characterPicker"></span>
+        <h4 id="name" class="text-center py-3 font-weight-bold">   Name</h4>
+        <p> Height: <span id="height" class="">height</span>cm </p>
+        <p> Mass: <span id="mass"> mass</span> </p>
+        <p> Hair Color: <span id="hair">hair </span> </p>
+        <p> Skin Color: <span id="skin">skin </span> </p>
+        <p> Eye Color: <span id="eyes"> </span> </p>
+        <p> Birth Year: <span id="birth"> birth</span> </p>
+        <p> Gender: <span id="gender">unknown </span> </p>
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+  </div>
+
+  <!--
+    NOTE: THERE IS ONLY UP TO 89 CHARACTERS TO LOAD FORM
+  -->
+  <!-- MY SCRIPT -->
+  <script>
+  var characterPicker = (Math.floor(Math.random() * 89) + 1);
+  // API key and url
+  var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
+  // Have to make a new request
+  var request = new XMLHttpRequest();
+
+  //I am going to GET, THIS URL
+  request.open('GET', requestURL);
+  //What type is it?
+  request.responseType = 'text';
+  //Send!
+  request.send();
+
+  //Request fulfilled, whats happens on page load and when it returns?
+  request.onload = function(){
+    var dataResponse = request.response;
+    var dataParsed = JSON.parse(dataResponse);
+
+    document.getElementById('characterPicker').innerHTML = characterPicker;
+    document.getElementById('name').innerHTML = dataParsed.name;
+    document.getElementById('height').innerHTML = dataParsed.height;
+    document.getElementById('mass').innerHTML = dataParsed.mass;
+    document.getElementById('hair').innerHTML = dataParsed.hair_color;
+    document.getElementById('skin').innerHTML = dataParsed.skin_color;
+    document.getElementById('eyes').innerHTML = dataParsed.eye_color;
+    document.getElementById('birth').innerHTML = dataParsed.birth_year;
+    document.getElementById("gender").innerHTML = dataParsed.gender;
+
+  }
+  </script>
+
+
+
+  <!-- FONT AWSOME -->
+  <script src="https://kit.fontawesome.com/10a1582225.js"></script>
+  <!-- jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- JAVASCRIPT FOR BOOTSTRAP CLASSES -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
