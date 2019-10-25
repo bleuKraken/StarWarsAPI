@@ -44,14 +44,14 @@
       <div class="col-md-4 planet">
         <span id="planetPicker"></span>
         <h4 id="planet" class="text-center py-3 font-weight-bold"> From Planet</h4>
-        <p> Name: <span id="planetName">Unknown </span> </p>
-        <p> Terrain: <span id="terrain">Unknown </span> </p>
-        <p> Planet Diameter: <span id="planetDiameter">Unknown </span> </p>
-        <p> Days in a Year: <span id="daysInYears">Unknown </span> </p>
-        <p> Hours in a Day: <span id="DailyHours"> Unknown</span> </p>
-        <p> Gravity: <span id="gravity">Unknown </span> </p>
-        <p> Climate: <span id="climate">Unknown </span> </p>
-        <p> Population: <span id="population">Unknown </span> </p>
+        <p> Name: 			 <span id="planetName">	    Unknown </span> </p>
+        <p> Terrain: 		 <span id="terrain">	    Unknown </span> </p>
+        <p> Planet Diameter: <span id="planetDiameter"> Unknown </span> </p>
+        <p> Days in a Year:  <span id="daysInYear">	    Unknown </span> </p>
+        <p> Hours in a Day:  <span id="DailyHours"> 	Unknown </span> </p>
+        <p> Gravity: 		 <span id="gravity">		Unknown </span> </p>
+        <p> Climate: 		 <span id="climate">		Unknown </span> </p>
+        <p> Population: 	 <span id="population">		Unknown </span> </p>
 
       </div>
 
@@ -61,19 +61,13 @@
       <div class="col-md-4 border person">
         <span id="characterPicker"></span>
         <h4 id="name" class="text-center py-3 font-weight-bold"> Name</h4>
-        <p> Height:
-          <span id="height">Unknown</span>cm
-          <span id="heightFt">Unknown</span>in
-        </p>
-        <p> Mass:
-          <span id="mass"> Unknown</span>kg
-          <span id="massLb"> Unknown</span>lb
-        </p>
-        <p> Hair Color: <span id="hair">Unknown </span> </p>
-        <p> Skin Color: <span id="skin">Unknown </span> </p>
-        <p> Eye Color: <span id="eyes">Unknown </span> </p>
-        <p> Birth Year: <span id="birth"> Unknown</span> </p>
-        <p> Gender: <span id="gender">Unknown </span> </p>
+        <p> Height: 	 <span id="height"> Unknown</span>cm <span id="heightFt">Unknown</span>in</p>
+        <p> Mass:		 <span id="mass">   Unknown</span>kg <span id="massLb"> Unknown</span>lb</p>
+        <p> Hair Color:  <span id="hair">	Unknown </span> </p>
+        <p> Skin Color:  <span id="skin">   Unknown </span> </p>
+        <p> Eye Color: 	 <span id="eyes">   Unknown </span> </p>
+        <p> Birth Year:  <span id="birth">  Unknown</span> </p>
+        <p> Gender: 	 <span id="gender"> Unknown </span> </p>
         <p> Home Planet: <button href="#" onlick="planetClicked()">Check for Planet </button>
       </div>
       <div class="col-md-4">
@@ -81,9 +75,10 @@
       </div>
     </div>
   </div>
-
+  
+  
+	<!-- GENERATE PLANET INFO -->
   <script>
-    //var planetPicker = (Math.floor(Math.random() * 30) + 1);
     // API key and url
     var requestPlanetURL = "https://swapi.co/api/planets/1";
     // Have to make a new request
@@ -104,6 +99,8 @@
       //Send data to locations on page
       document.getElementById('planetName').innerHTML = planetDataParsed.name;
       document.getElementById('terrain').innerHTML = planetDataParsed.terrain;
+      document.getElementById('planetDiameter').innerHTML = planetDataParsed.diameter;
+      document.getElementById('daysInYear').innerHTML = planetDataParsed.orbital_period;
 
     }
 
