@@ -1,3 +1,7 @@
+*{
+  border: 1px solid red;
+}
+
 body {
   background-color: rgb(36, 36, 36);
   color: #fff;
@@ -16,4 +20,8 @@ h1 {
 p span {
   font-weight: normal !important;
   color: #fff;
+}
+
+#header {
+  margin-top: 175px;
 }

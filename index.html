@@ -14,12 +14,12 @@
 
 
 <body>
-<!-- STORY BEGINS HERE -->
-  <div class="container">
+  <!-- STORY BEGINS HERE -->
+  <div id="header" class="container-fluid">
     <div class="row">
       <div class="col">
-        <h1 class="text-center py-3">
-          Star Wars InfoSite
+        <h1 class="text-center mb-5">
+          Star Wars Data
         </h1>
       </div>
     </div>
@@ -38,20 +38,43 @@
   <!-- INFO OF CHARACTER -->
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+
+
+      <!-- PLANET -->
+      <div class="col-md-4 planet">
+        <span id="planetPicker"></span>
+        <h4 id="planet" class="text-center py-3 font-weight-bold"> From Planet</h4>
+        <p> Name: <span id="planetName">Unknown </span> </p>
+        <p> Terrain: <span id="terrain">Unknown </span> </p>
+        <p> Planet Diameter: <span id="planetDiameter">Unknown </span> </p>
+        <p> Days in a Year: <span id="daysInYears">Unknown </span> </p>
+        <p> Hours in a Day: <span id="DailyHours"> Unknown</span> </p>
+        <p> Gravity: <span id="gravity">Unknown </span> </p>
+        <p> Climate: <span id="climate">Unknown </span> </p>
+        <p> Population: <span id="population">Unknown </span> </p>
 
       </div>
-      <div class="col-md-4 border person">
 
+
+
+      <!-- CHARACTER -->
+      <div class="col-md-4 border person">
         <span id="characterPicker"></span>
-        <h4 id="name" class="text-center py-3 font-weight-bold">   Name</h4>
-        <p> Height: <span id="height" class="">height</span>cm </p>
-        <p> Mass: <span id="mass"> mass</span> </p>
-        <p> Hair Color: <span id="hair">hair </span> </p>
-        <p> Skin Color: <span id="skin">skin </span> </p>
-        <p> Eye Color: <span id="eyes"> </span> </p>
-        <p> Birth Year: <span id="birth"> birth</span> </p>
-        <p> Gender: <span id="gender">unknown </span> </p>
+        <h4 id="name" class="text-center py-3 font-weight-bold"> Name</h4>
+        <p> Height:
+          <span id="height">Unknown</span>cm
+          <span id="heightFt">Unknown</span>in
+        </p>
+        <p> Mass:
+          <span id="mass"> Unknown</span>kg
+          <span id="massLb"> Unknown</span>lb
+        </p>
+        <p> Hair Color: <span id="hair">Unknown </span> </p>
+        <p> Skin Color: <span id="skin">Unknown </span> </p>
+        <p> Eye Color: <span id="eyes">Unknown </span> </p>
+        <p> Birth Year: <span id="birth"> Unknown</span> </p>
+        <p> Gender: <span id="gender">Unknown </span> </p>
+        <p> Home Planet: <button href="#" onlick="planetClicked()">Check for Planet </button>
       </div>
       <div class="col-md-4">
 
@@ -59,40 +82,86 @@
     </div>
   </div>
 
+  <script>
+    //var planetPicker = (Math.floor(Math.random() * 30) + 1);
+    // API key and url
+    var requestPlanetURL = "https://swapi.co/api/planets/1";
+    // Have to make a new request
+    var requestPlanet = new XMLHttpRequest();
+    //I am going to GET, THIS URL
+    requestPlanet.open('GET', requestPlanetURL);
+    //What type is it?
+    requestPlanet.responseType = 'text';
+    //Send!
+    requestPlanet.send();
+
+    //Request fulfilled, whats happens on page load and when it returns?
+    requestPlanet.onload = function() {
+      var planetDataResponse = requestPlanet.response;
+      var planetDataParsed = JSON.parse(planetDataResponse);
+
+
+      //Send data to locations on page
+      document.getElementById('planetName').innerHTML = planetDataParsed.name;
+      document.getElementById('terrain').innerHTML = planetDataParsed.terrain;
+
+    }
+
+  </script>
+
   <!--
     NOTE: THERE IS ONLY UP TO 89 CHARACTERS TO LOAD FORM
   -->
   <!-- MY SCRIPT -->
   <script>
-  var characterPicker = (Math.floor(Math.random() * 89) + 1);
-  // API key and url
-  var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
-  // Have to make a new request
-  var request = new XMLHttpRequest();
+    var characterPicker = (Math.floor(Math.random() * 89) + 1);
+    // API key and url
+    var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
 
-  //I am going to GET, THIS URL
-  request.open('GET', requestURL);
-  //What type is it?
-  request.responseType = 'text';
-  //Send!
-  request.send();
+    // Have to make a new request
+    var request = new XMLHttpRequest();
 
-  //Request fulfilled, whats happens on page load and when it returns?
-  request.onload = function(){
-    var dataResponse = request.response;
-    var dataParsed = JSON.parse(dataResponse);
+    //I am going to GET, THIS URL
+    request.open('GET', requestURL);
 
-    document.getElementById('characterPicker').innerHTML = characterPicker;
-    document.getElementById('name').innerHTML = dataParsed.name;
-    document.getElementById('height').innerHTML = dataParsed.height;
-    document.getElementById('mass').innerHTML = dataParsed.mass;
-    document.getElementById('hair').innerHTML = dataParsed.hair_color;
-    document.getElementById('skin').innerHTML = dataParsed.skin_color;
-    document.getElementById('eyes').innerHTML = dataParsed.eye_color;
-    document.getElementById('birth').innerHTML = dataParsed.birth_year;
-    document.getElementById("gender").innerHTML = dataParsed.gender;
+    //What type is it?
+    request.responseType = 'text';
+    //Send!
+    request.send();
 
-  }
+    //Request fulfilled, whats happens on page load and when it returns?
+    request.onload = function() {
+      var dataResponse = request.response;
+      var dataParsed = JSON.parse(dataResponse);
+
+      var heightCm = dataParsed.height;
+      var massKg = dataParsed.mass;
+      parseFloat(heightCm);
+
+      //convert cm to height
+      var heightFt = heightCm / 2.54;
+      var massLb = massKg * 2.2;
+
+      heightFt = heightFt.toFixed(2);
+      massLb = massLb.toFixed(2)
+
+
+      //Send data to locations on page
+      document.getElementById('characterPicker').innerHTML = characterPicker;
+      document.getElementById('name').innerHTML = dataParsed.name;
+      document.getElementById('height').innerHTML = heightCm;
+      document.getElementById('heightFt').innerHTML = heightFt;
+      document.getElementById('mass').innerHTML = massKg;
+      document.getElementById('massLb').innerHTML = massLb;
+      document.getElementById('hair').innerHTML = dataParsed.hair_color;
+      document.getElementById('skin').innerHTML = dataParsed.skin_color;
+      document.getElementById('eyes').innerHTML = dataParsed.eye_color;
+      document.getElementById('birth').innerHTML = dataParsed.birth_year;
+      document.getElementById("gender").innerHTML = dataParsed.gender;
+
+    }
+
+
   </script>
 
 
