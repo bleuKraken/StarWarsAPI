@@ -40,45 +40,65 @@
     <div class="row">
 
 
-      <!-- PLANET -->
-      <div class="col-md-4 planet">
-        <span id="planetPicker"></span>
+      <!-- PLANET DATA -->
+      <div class="col-md-4 border planet pt-5">
         <h4 id="planet" class="text-center py-3 font-weight-bold"> From Planet</h4>
-        <p> Name: 			 <span id="planetName">	    Unknown </span> </p>
-        <p> Terrain: 		 <span id="terrain">	    Unknown </span> </p>
-        <p> Planet Diameter: <span id="planetDiameter"> Unknown </span> </p>
-        <p> Days in a Year:  <span id="daysInYear">	    Unknown </span> </p>
-        <p> Hours in a Day:  <span id="DailyHours"> 	Unknown </span> </p>
-        <p> Gravity: 		 <span id="gravity">		Unknown </span> </p>
-        <p> Climate: 		 <span id="climate">		Unknown </span> </p>
-        <p> Population: 	 <span id="population">		Unknown </span> </p>
-
+        <p> Name: <span id="planetName"> Unknown </span> </p>
+        <p> Terrain: <span id="terrain"> Unknown </span> </p>
+        <p> Planet Diameter: <span id="planetDiameter"> Unknown </span> <span class="unit">km</span> </p>
+        <p> Days in a Year: <span id="daysInYear"> Unknown </span> </p>
+        <p> Hours in a Day: <span id="hoursInDay"> Unknown </span> </p>
+        <p> Gravity: <span id="gravity"> Unknown </span> </p>
+        <p> Climate: <span id="climate"> Unknown </span> </p>
+        <p> Population: <span id="population"> Unknown </span> </p>
       </div>
 
-
-
-      <!-- CHARACTER -->
+      <!-- CHARACTER DATA -->
       <div class="col-md-4 border person">
         <span id="characterPicker"></span>
-        <h4 id="name" class="text-center py-3 font-weight-bold"> Name</h4>
-        <p> Height: 	 <span id="height"> Unknown</span>cm <span id="heightFt">Unknown</span>in</p>
-        <p> Mass:		 <span id="mass">   Unknown</span>kg <span id="massLb"> Unknown</span>lb</p>
-        <p> Hair Color:  <span id="hair">	Unknown </span> </p>
-        <p> Skin Color:  <span id="skin">   Unknown </span> </p>
-        <p> Eye Color: 	 <span id="eyes">   Unknown </span> </p>
-        <p> Birth Year:  <span id="birth">  Unknown</span> </p>
-        <p> Gender: 	 <span id="gender"> Unknown </span> </p>
+        <h4 id="name" class="text-center py-3 font-weight-bold text-lg"> Name</h4>
+        <p> Height: <span id="height"> Unknown</span>cm <span id="heightFt">Unknown</span> <span class="unit">in</span></p>
+        <p> Mass: <span id="mass"> Unknown</span>kg <span id="massLb"> Unknown</span> <span class="unit">lb</span> </p>
+        <p> Hair Color: <span id="hair"> Unknown </span> </p>
+        <p> Skin Color: <span id="skin"> Unknown </span> </p>
+        <p> Eye Color: <span id="eyes"> Unknown </span> </p>
+        <p> Birth Year: <span id="birth"> Unknown</span> </p>
+        <p> Gender: <span id="gender"> Unknown </span> </p>
         <p> Home Planet: <button href="#" onlick="planetClicked()">Check for Planet </button>
       </div>
-      <div class="col-md-4">
 
+
+      <!-- FILMS DATA -->
+      <div class="col-md-4 border filmList pt-5">
+        <h4 id="filmSection" class="text-center py-3 font-weight-bold text-lg"> Appears On</h4>
+        <p class="floatUp"> <span id="episode1"></span> <span id="episode1TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode2"></span> <span id="episode2TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode3"></span> <span id="episode3TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode4"></span> <span id="episode4TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode5"></span> <span id="episode5TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode6"></span> <span id="episode6TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode7"></span> <span id="episode7TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode8"></span> <span id="episode8TitleShow"></span></p>
+        <p class="floatUp"> <span id="episode9"></span> <span id="episode9TitleShow"></span></p>
+
+
+
+        <!--
+        <p> Height: <span id="height"> Unknown</span>cm <span id="heightFt">Unknown</span> <span class="unit">in</span></p>
+        <p> Mass: <span id="mass"> Unknown</span>kg <span id="massLb"> Unknown</span> <span class="unit">lb</span> </p>
+        <p> Hair Color: <span id="hair"> Unknown </span> </p>
+        <p> Skin Color: <span id="skin"> Unknown </span> </p>
+      -->
       </div>
+
+
     </div>
   </div>
-  
-  
-	<!-- GENERATE PLANET INFO -->
+
+
+  <!-- GENERATE PLANET INFO -->
   <script>
+
     // API key and url
     var requestPlanetURL = "https://swapi.co/api/planets/1";
     // Have to make a new request
@@ -96,20 +116,25 @@
       var planetDataParsed = JSON.parse(planetDataResponse);
 
 
+
+
       //Send data to locations on page
       document.getElementById('planetName').innerHTML = planetDataParsed.name;
       document.getElementById('terrain').innerHTML = planetDataParsed.terrain;
       document.getElementById('planetDiameter').innerHTML = planetDataParsed.diameter;
       document.getElementById('daysInYear').innerHTML = planetDataParsed.orbital_period;
+      document.getElementById('hoursInDay').innerHTML = planetDataParsed.rotation_period;
+      document.getElementById('gravity').innerHTML = planetDataParsed.gravity;
+      document.getElementById('climate').innerHTML = planetDataParsed.climate;
+      document.getElementById('population').innerHTML = planetDataParsed.population;
 
     }
-
   </script>
 
   <!--
     NOTE: THERE IS ONLY UP TO 89 CHARACTERS TO LOAD FORM
   -->
-  <!-- MY SCRIPT -->
+  <!-- CHARCTER STATS GENERATE -->
   <script>
     var characterPicker = (Math.floor(Math.random() * 89) + 1);
     // API key and url
@@ -130,17 +155,73 @@
     request.onload = function() {
       var dataResponse = request.response;
       var dataParsed = JSON.parse(dataResponse);
-
+      // Get units and convert
       var heightCm = dataParsed.height;
       var massKg = dataParsed.mass;
       parseFloat(heightCm);
-
-      //convert cm to height
       var heightFt = heightCm / 2.54;
       var massLb = massKg * 2.2;
-
+      // Decimal place value
       heightFt = heightFt.toFixed(2);
       massLb = massLb.toFixed(2)
+
+      var filmTotal = dataParsed.films.length;
+
+      for(var counter = 0; counter < filmTotal; counter++)
+      {
+        var episode1 = dataParsed.films[counter];
+        if (episode1 == "https://swapi.co/api/films/1/")
+        {
+          document.getElementById('episode1').innerHTML = "Episode I:";
+          document.getElementById('episode1TitleShow').innerHTML = "The Phantom Menace";
+        }
+        if (episode1 == "https://swapi.co/api/films/2/")
+        {
+          document.getElementById('episode2').innerHTML = "Episode II:";
+          document.getElementById('episode2TitleShow').innerHTML = "Attack of the Clones";
+        }
+        if (episode1 == "https://swapi.co/api/films/3/")
+        {
+          document.getElementById('episode3').innerHTML = "Episode III:";
+          document.getElementById('episode3TitleShow').innerHTML = "Revenge of the Sith";
+        }
+
+
+
+        if (episode1 == "https://swapi.co/api/films/4/")
+        {
+          document.getElementById('episode4').innerHTML = "Episode IV:";
+          document.getElementById('episode4TitleShow').innerHTML = "A New Hope";
+        }
+        if (episode1 == "https://swapi.co/api/films/5/")
+        {
+          document.getElementById('episode5').innerHTML = "Episode V:";
+          document.getElementById('episode5TitleShow').innerHTML = "The Empire Strikes Back";
+        }
+        if (episode1 == "https://swapi.co/api/films/6/")
+        {
+          document.getElementById('episode6').innerHTML = "Episode VI:";
+          document.getElementById('episode6TitleShow').innerHTML = "Return of the Jedi";
+        }
+        if (episode1 == "https://swapi.co/api/films/7/")
+        {
+          document.getElementById('episode7').innerHTML = "Episode VII:";
+          document.getElementById('episode7TitleShow').innerHTML = "The Force Awakens";
+        }
+        if (episode1 == "https://swapi.co/api/films/8/")
+        {
+          document.getElementById('episode8').innerHTML = "Episode VIII:";
+          document.getElementById('episode8TitleShow').innerHTML = "The Last Jedi";
+        }
+        if (episode1 == "https://swapi.co/api/films/9/")
+        {
+          document.getElementById('episode9').innerHTML = "Episode IX:";
+          document.getElementById('episode9TitleShow').innerHTML = "The Rise of Skywalker";
+        }
+      }
+
+
+
 
 
       //Send data to locations on page
@@ -157,8 +238,6 @@
       document.getElementById("gender").innerHTML = dataParsed.gender;
 
     }
-
-
   </script>
 
 

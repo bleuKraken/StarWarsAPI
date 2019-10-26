@@ -7,11 +7,27 @@ body {
   color: #fff;
 }
 
+.unit {
+  color: rgb(249, 254, 9);
+}
+
+.text-lg {
+  font-size: 1.8rem;
+}
+
+.floatUp {
+  float: left;
+}
+
 h1 {
   color: rgb(250, 201, 27);
   font-weight: bold;
 }
 
+.planet p {
+  font-weight: bold;
+  color: rgb(249, 254, 9);
+}
 .person p{
   font-weight: bold;
   color: rgb(249, 254, 9);
