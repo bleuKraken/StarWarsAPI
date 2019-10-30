@@ -1,13 +1,13 @@
 
-
-
 body {
-  background-color: rgb(36, 36, 36);
   color: #fff;
-  background: url('https://raw.githubusercontent.com/erickkg/StarWarsAPI/master/img/background.jpg') no-repeat center center fixed;
+  background: url("https://raw.githubusercontent.com/erickkg/StarWarsAPI/master/img/background.jpg") no-repeat scroll 0px 100% / cover transparent;
+  height: 100vh;
+  overflow: auto;
 }
 
 .unit {
+  background-color: rgb(0, 0, 0);
   color: rgb(249, 254, 9);
 }
 
@@ -20,16 +20,19 @@ body {
 }
 
 h1 {
+  background-color: rgb(0, 0, 0);
   color: rgb(250, 201, 27);
   font-weight: bold;
 }
 
 .planet p, .planetKey {
   font-weight: bold;
+  background-color: rgb(0, 0, 0);
   color: rgb(249, 254, 9);
 }
 .person p{
   font-weight: bold;
+  background-color: rgb(0, 0, 0);
   color: rgb(249, 254, 9);
 }
 
@@ -39,16 +42,19 @@ h1 {
 
 .movieLink:hover {
   background-color: rgba(200, 200, 200, 0.5);
-  color: white;
+  color: #fff;
+  display: block;
 }
 
 p span {
   font-weight: normal !important;
+  background-color: rgb(0, 0, 0);
   color: #fff;
 }
 
 #allColumns {
 background: rgba(0, 0, 0, 0.6);
+color: #fff;
 }
 
 #header {
