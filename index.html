@@ -29,15 +29,18 @@
 
   <!-- INFO OF CHARACTER -->
   <div class="container">
-    <div class="row">
+    <div id="allColumns" class="row">
       <!-- col PLANET DATA -->
       <div class="col-md-4 border planet pt-5">
         <h4 id="planet" class="text-center py-3 font-weight-bold"> From Planet</h4>
         <p> Name: <span id="planetName"> Unknown </span> </p>
         <p> Terrain: <span id="terrain"> Unknown </span> </p>
-        <p> Planet Diameter: <span id="planetDiameter"> Unknown </span> <span class="unit">km</span>
-          <span id="planetDiameterMi">Unknown</span>mi
-        </p>
+        <div class="planetKey"> Planet Diameter
+          <p> <span id="planetDiameter"> Unknown </span> <span class="unit">km</span> or
+            <span id="planetDiameterMi">Unknown</span>mi
+          </p>
+        </div>
+
         <p> Days in a Year: <span id="daysInYear"> Unknown </span> </p>
         <p> Hours in a Day: <span id="hoursInDay"> Unknown </span> </p>
         <p> Gravity: <span id="gravity"> Unknown </span> </p>
@@ -57,22 +60,40 @@
         <p> Birth Year: <span id="birth"> Unknown</span> </p>
         <p> Gender: <span id="gender"> Unknown </span> </p>
         <div class="text-center">
-          <button type="button" class="btn btn-outline-light" value="Refresh Page" onClick="window.location.reload();">New Character</button>
+          <button type="button" class="btn btn-outline-light font-weight-bold" value="Refresh Page" onClick="window.location.reload();">New Character</button>
         </div>
       </div>
 
       <!-- col FILMS DATA -->
       <div class="col-md-4 border filmList pt-5">
         <h4 id="filmSection" class="text-center py-3 font-weight-bold"> Appears On</h4>
-        <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ"> <div class="floatUp movieLink my-1 "> <span id="episode1"></span> <span id="episode1TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM"> <div class="floatUp movieLink my-1 "> <span id="episode2"></span> <span id="episode2TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU"> <div class="floatUp movieLink my-1 "> <span id="episode3"></span> <span id="episode3TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ"> <div class="floatUp movieLink my-1 "> <span id="episode4"></span> <span id="episode4TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=xESiohGGP7g"> <div class="floatUp movieLink my-1 "> <span id="episode5"></span> <span id="episode5TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc"> <div class="floatUp movieLink my-1 "> <span id="episode6"></span> <span id="episode6TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE"> <div class="floatUp movieLink my-1 "> <span id="episode7"></span> <span id="episode7TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY"> <div class="floatUp movieLink my-1 "> <span id="episode8"></span> <span id="episode8TitleShow"></span></div> </a>
-        <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg"> <div class="floatUp movieLink my-1 "> <span id="episode9"></span> <span id="episode9TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="trailerLink1" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode1"></span> <span id="episode1TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="trailerLink2" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode2"></span> <span id="episode2TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="trailerLink3" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode3"></span> <span id="episode3TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="trailerLink4" class="d-none">
+          <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="episode4"></span> <span id="episode4TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="trailerLink5" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode5"></span> <span id="episode5TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="trailerLink6" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode6"></span> <span id="episode6TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="trailerLink7" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode7"></span> <span id="episode7TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="trailerLink8" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode8"></span> <span id="episode8TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="trailerLink9" class="d-none">
+          <div class="floatUp movieLink my-1"> <span id="episode9"></span> <span id="episode9TitleShow"></span></div>
+        </a>
       </div>
     </div>
   </div>
@@ -96,7 +117,7 @@
       var planetDataParsed = JSON.parse(planetDataResponse);
 
       var planetDiameterKm = planetDataParsed.diameter;
-      var planetDiameterMi = planetDiameterKm/1.609344;
+      var planetDiameterMi = planetDiameterKm / 1.609344;
       planetDiameterMi = planetDiameterMi.toFixed(2);
 
 
@@ -149,40 +170,49 @@
 
       //For every link that shows, display that episode title
       for (var counter = 0; counter < filmTotal; counter++) {
-        var episode1 = dataParsed.films[counter];
-        if (episode1 == "https://swapi.co/api/films/1/") {
+        var episodePicker = dataParsed.films[counter];
+        if (episodePicker == "https://swapi.co/api/films/1/") {
+          document.getElementById('trailerLink1').classList.remove("d-none");
           document.getElementById('episode1').innerHTML = "Episode I:";
           document.getElementById('episode1TitleShow').innerHTML = "The Phantom Menace";
         }
-        if (episode1 == "https://swapi.co/api/films/2/") {
+        if (episodePicker == "https://swapi.co/api/films/2/") {
+          document.getElementById('trailerLink2').classList.remove("d-none");
           document.getElementById('episode2').innerHTML = "Episode II:";
           document.getElementById('episode2TitleShow').innerHTML = "Attack of the Clones";
         }
-        if (episode1 == "https://swapi.co/api/films/3/") {
+        if (episodePicker == "https://swapi.co/api/films/3/") {
+          document.getElementById('trailerLink3').classList.remove("d-none");
           document.getElementById('episode3').innerHTML = "Episode III:";
           document.getElementById('episode3TitleShow').innerHTML = "Revenge of the Sith";
         }
-        if (episode1 == "https://swapi.co/api/films/4/") {
+        if (episodePicker == "https://swapi.co/api/films/4/") {
+          document.getElementById('trailerLink4').classList.remove("d-none");
           document.getElementById('episode4').innerHTML = "Episode IV:";
           document.getElementById('episode4TitleShow').innerHTML = "A New Hope";
         }
-        if (episode1 == "https://swapi.co/api/films/5/") {
+        if (episodePicker == "https://swapi.co/api/films/5/") {
+          document.getElementById('trailerLink5').classList.remove("d-none");
           document.getElementById('episode5').innerHTML = "Episode V:";
           document.getElementById('episode5TitleShow').innerHTML = "The Empire Strikes Back";
         }
-        if (episode1 == "https://swapi.co/api/films/6/") {
+        if (episodePicker == "https://swapi.co/api/films/6/") {
+          document.getElementById('trailerLink6').classList.remove("d-none");
           document.getElementById('episode6').innerHTML = "Episode VI:";
           document.getElementById('episode6TitleShow').innerHTML = "Return of the Jedi";
         }
-        if (episode1 == "https://swapi.co/api/films/7/") {
+        if (episodePicker == "https://swapi.co/api/films/7/") {
+          document.getElementById('trailerLink7').classList.remove("d-none");
           document.getElementById('episode7').innerHTML = "Episode VII:";
           document.getElementById('episode7TitleShow').innerHTML = "The Force Awakens";
         }
-        if (episode1 == "https://swapi.co/api/films/8/") {
+        if (episodePicker == "https://swapi.co/api/films/8/") {
+          document.getElementById('trailerLink8').classList.remove("d-none");
           document.getElementById('episode8').innerHTML = "Episode VIII:";
           document.getElementById('episode8TitleShow').innerHTML = "The Last Jedi";
         }
-        if (episode1 == "https://swapi.co/api/films/9/") {
+        if (episodePicker == "https://swapi.co/api/films/9/") {
+          document.getElementById('trailerLink9').classList.remove("d-none");
           document.getElementById('episode9').innerHTML = "Episode IX:";
           document.getElementById('episode9TitleShow').innerHTML = "The Rise of Skywalker";
         }
