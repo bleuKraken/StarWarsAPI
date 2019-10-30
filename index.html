@@ -35,7 +35,9 @@
         <h4 id="planet" class="text-center py-3 font-weight-bold"> From Planet</h4>
         <p> Name: <span id="planetName"> Unknown </span> </p>
         <p> Terrain: <span id="terrain"> Unknown </span> </p>
-        <p> Planet Diameter: <span id="planetDiameter"> Unknown </span> <span class="unit">km</span> </p>
+        <p> Planet Diameter: <span id="planetDiameter"> Unknown </span> <span class="unit">km</span>
+          <span id="planetDiameterMi">Unknown</span>mi
+        </p>
         <p> Days in a Year: <span id="daysInYear"> Unknown </span> </p>
         <p> Hours in a Day: <span id="hoursInDay"> Unknown </span> </p>
         <p> Gravity: <span id="gravity"> Unknown </span> </p>
@@ -45,7 +47,7 @@
 
       <!-- col CHARACTER DATA -->
       <div class="col-md-4 border person">
-        <span id="characterPicker"></span>
+        <p class="text-center">Character #:<span id="characterPicker"></span> </p>
         <h4 id="name" class="text-center py-3 font-weight-bold text-lg"> Name</h4>
         <p> Height: <span id="height"> Unknown</span>cm <span id="heightFt">Unknown</span> <span class="unit">in</span></p>
         <p> Mass: <span id="mass"> Unknown</span>kg <span id="massLb"> Unknown</span> <span class="unit">lb</span> </p>
@@ -54,20 +56,23 @@
         <p> Eye Color: <span id="eyes"> Unknown </span> </p>
         <p> Birth Year: <span id="birth"> Unknown</span> </p>
         <p> Gender: <span id="gender"> Unknown </span> </p>
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-light" value="Refresh Page" onClick="window.location.reload();">New Character</button>
+        </div>
       </div>
 
       <!-- col FILMS DATA -->
       <div class="col-md-4 border filmList pt-5">
-        <h4 id="filmSection" class="text-center py-3 font-weight-bold text-lg"> Appears On</h4>
-        <p class="floatUp"> <span id="episode1"></span> <span id="episode1TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode2"></span> <span id="episode2TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode3"></span> <span id="episode3TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode4"></span> <span id="episode4TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode5"></span> <span id="episode5TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode6"></span> <span id="episode6TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode7"></span> <span id="episode7TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode8"></span> <span id="episode8TitleShow"></span></p>
-        <p class="floatUp"> <span id="episode9"></span> <span id="episode9TitleShow"></span></p>
+        <h4 id="filmSection" class="text-center py-3 font-weight-bold"> Appears On</h4>
+        <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ"> <div class="floatUp movieLink my-1 "> <span id="episode1"></span> <span id="episode1TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM"> <div class="floatUp movieLink my-1 "> <span id="episode2"></span> <span id="episode2TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU"> <div class="floatUp movieLink my-1 "> <span id="episode3"></span> <span id="episode3TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ"> <div class="floatUp movieLink my-1 "> <span id="episode4"></span> <span id="episode4TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=xESiohGGP7g"> <div class="floatUp movieLink my-1 "> <span id="episode5"></span> <span id="episode5TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc"> <div class="floatUp movieLink my-1 "> <span id="episode6"></span> <span id="episode6TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE"> <div class="floatUp movieLink my-1 "> <span id="episode7"></span> <span id="episode7TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY"> <div class="floatUp movieLink my-1 "> <span id="episode8"></span> <span id="episode8TitleShow"></span></div> </a>
+        <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg"> <div class="floatUp movieLink my-1 "> <span id="episode9"></span> <span id="episode9TitleShow"></span></div> </a>
       </div>
     </div>
   </div>
@@ -90,10 +95,20 @@
       var planetDataResponse = requestPlanet.response;
       var planetDataParsed = JSON.parse(planetDataResponse);
 
+      var planetDiameterKm = planetDataParsed.diameter;
+      var planetDiameterMi = planetDiameterKm/1.609344;
+      planetDiameterMi = planetDiameterMi.toFixed(2);
+
+
+
+
       //Send data to locations on page
       document.getElementById('planetName').innerHTML = planetDataParsed.name;
       document.getElementById('terrain').innerHTML = planetDataParsed.terrain;
       document.getElementById('planetDiameter').innerHTML = planetDataParsed.diameter;
+      document.getElementById('planetDiameterMi').innerHTML = planetDiameterMi;
+
+
       document.getElementById('daysInYear').innerHTML = planetDataParsed.orbital_period;
       document.getElementById('hoursInDay').innerHTML = planetDataParsed.rotation_period;
       document.getElementById('gravity').innerHTML = planetDataParsed.gravity;
@@ -123,6 +138,7 @@
       // Get units and convert
       var heightCm = dataParsed.height;
       var massKg = dataParsed.mass;
+      //Converted vars
       parseFloat(heightCm);
       var heightFt = heightCm / 2.54;
       var massLb = massKg * 2.2;

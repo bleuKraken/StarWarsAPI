@@ -1,8 +1,13 @@
-
+/*
+* {
+  border: 1px solid red;
+}
+*/
 
 body {
   background-color: rgb(36, 36, 36);
   color: #fff;
+  background: url('/img/background.jpg') no-repeat center center fixed;
 }
 
 .unit {
@@ -10,7 +15,7 @@ body {
 }
 
 .text-lg {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .floatUp {
@@ -29,6 +34,10 @@ h1 {
 .person p{
   font-weight: bold;
   color: rgb(249, 254, 9);
+}
+
+.movieLink {
+  border: 1px solid #777;
 }
 
 p span {
