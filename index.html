@@ -16,7 +16,7 @@
   <div id="header" class="container">
     <div class="row">
       <div class="col">
-        <h1 id="title" class="text-center mb-2">
+        <h1 class="text-center mb-2">
           Star Wars Character Data
         </h1>
         <!--  TODO: Future Feature
@@ -43,12 +43,13 @@
     </div>
   </header>
 
+  <!-- THIS SECTION ONLY SHOWS ON DESKTOP MODE -->
   <!-- SECTION INFO OF CHARACTER -->
-  <section class="container">
+  <section class="container desktop-mode">
     <div id="allColumns" class="row">
 
       <!-- col PLANET DATA -->
-      <div class="col-md-4 border-blue planet-column pt-5">
+      <div class="col-md-4 order-md-1 order-2 border-blue planet-column pt-5">
         <h4 id="planet" class="text-center py-3 column-header font-weight-bold"> From Planet</h4>
         <p> Name: <span id="planetName"> Unknown </span> </p>
         <p> Terrain: <span id="terrain"> Unknown </span> </p>
@@ -67,21 +68,21 @@
       </div>
 
       <!-- col CHARACTER DATA -->
-      <div class="col-md-4 border-blue person">
+      <div class="col-md-4 order-md-2 order-1 border-blue person">
         <p class="text-center pt-2">Character #:<span id="characterPicker"></span> </p>
-        <h4 id="characterStats" class="text-center pt-1 pb-3 column-header font-weight-bold"> Character Stats</h4>
-        <p> Height: <span id="height"> Unknown</span>cm <span id="heightFt">Unknown</span> <span class="unit font-weight-bold">in</span></p>
-        <p> Mass: <span id="mass"> Unknown</span>kg <span id="massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
-        <p> Hair Color: <span id="hair"> Unknown </span> </p>
-        <p> Skin Color: <span id="skin"> Unknown </span> </p>
-        <p> Eye Color: <span id="eyes"> Unknown </span> </p>
-        <p> Birth Year: <span id="birth"> Unknown</span> </p>
-        <p> Gender: <span id="gender"> Unknown </span> </p>
+        <h4 class="text-center pt-1 pb-3 column-header font-weight-bold"> Character Stats</h4>
 
+        <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
+        <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
+        <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
+        <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
+        <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
+        <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
+        <p> Gender: <span class="character-gender"> Unknown </span> </p>
       </div>
 
       <!-- col FILMS DATA -->
-      <div class="col-md-4 border-blue filmList pt-5">
+      <div class="col-md-4 order-md-3 order-3 border-blue filmList pt-5">
         <h4 id="filmSection" class="text-center py-3 column-header font-weight-bold"> Appears On</h4>
         <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="trailerLink1" class="d-none movie-container">
           <div class="floatUp movieLink my-1 w-100"> <span id="episode1"></span> <span id="episode1TitleShow"></span></div>
@@ -113,6 +114,83 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+  <!-- THIS SECTION ONLY SHOWS ON MOBILE -->
+  <section class="mobile-mode d-none">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Collapsible Group Item #1
+            </button>
+          </h5>
+        </div>
+        <!-- ACCORDIAN 1 SECTION CONTENT-->
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
+            <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
+            <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
+            <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
+            <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
+            <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
+            <p> Gender: <span class="character-gender"> Unknown </span> </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- I AM BOTTOM -->>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Collapsible Group Item #2
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+            aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!--
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Collapsible Group Item #3
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+            aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    -->
+    </div>
+  </section>
+
 
   <!-- GENERATE PLANET INFO -->
   <script>
@@ -171,78 +249,113 @@
       var massKg = dataParsed.mass;
       //Converted vars
       parseFloat(heightCm);
-      var heightFt = heightCm / 2.54;
+      heightIn = heightCm / 2.54;
       var massLb = massKg * 2.2;
       // Decimal place value
-      heightFt = heightFt.toFixed(2);
+      heightIn = heightIn.toFixed(2);
       massLb = massLb.toFixed(2)
       var filmTotal = dataParsed.films.length;
+      document.getElementById('name').innerHTML = dataParsed.name;
+
+      /* ADDING MOBILE HERE */
+      var characterHeight = document.getElementsByClassName('character-height');
+      var characterHeightIn = document.getElementsByClassName('character-heightIn');
+      var characterMass = document.getElementsByClassName('character-mass');
+      var characterMassLb = document.getElementsByClassName('character-massLb');
+      var characterHair = document.getElementsByClassName('character-hair');
+      var characterEyes = document.getElementsByClassName('character-eyes');
+      var characterSkin = document.getElementsByClassName('character-skin');
+      var characterBirth = document.getElementsByClassName('character-birth');
+      var characterGender = document.getElementsByClassName('character-gender');
+
+      /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
+      for (var counter = 0; counter <= 1; counter++) {
+        characterEyes[counter].innerHTML = dataParsed.eye_color;
+        characterHeight[counter].innerHTML = dataParsed.height;
+        characterHeightIn[counter].innerHTML = heightIn;
+        characterMass[counter].innerHTML = dataParsed.mass;
+        characterMassLb[counter].innerHTML = massLb;
+        characterHair[counter].innerHTML = dataParsed.hair_color;
+        characterSkin[counter].innerHTML = dataParsed.skin_color;
+        characterBirth[counter].innerHTML = dataParsed.birth_year;
+        characterGender[counter].innerHTML = dataParsed.gender;
+      }
 
       /*
       TODO: Might be able to shrink code below using an array or multidemensional array.
       */
       //For every link that shows, display that episode title
-      for (var counter = 0; counter < filmTotal; counter++) {
+      var movieCounter = 0;
+      var stringMovieLink = [
+        "https://swapi.co/api/films/1/",
+        "https://swapi.co/api/films/2/",
+        "https://swapi.co/api/films/3/",
+        "https://swapi.co/api/films/4/",
+        "https://swapi.co/api/films/5/",
+        "https://swapi.co/api/films/6/",
+        "https://swapi.co/api/films/7/",
+        "https://swapi.co/api/films/8/",
+        "https://swapi.co/api/films/9/"
+      ];
+      var romanNumber = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+      var episodeTitle = ["The Phantom Menace", "Attack of the Clones", "Revenge of the Sith", "A New Hope", "The Empire Strikes Back", "Return of the Jedi", "The Force Awakens", "The Last Jedi", "The Rise of Skywalker"];
+
+      //TODO: Maybe change 9 to "film.length from array total"
+      for (var counter = 0; counter < 9; counter++) {
         var episodePicker = dataParsed.films[counter];
+
+
+        movieCounter = counter + 1;
         if (episodePicker == "https://swapi.co/api/films/1/") {
-          document.getElementById('trailerLink1').classList.remove("d-none");
-          document.getElementById('episode1').innerHTML = "Episode I:";
-          document.getElementById('episode1TitleShow').innerHTML = "The Phantom Menace";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
         }
         if (episodePicker == "https://swapi.co/api/films/2/") {
-          document.getElementById('trailerLink2').classList.remove("d-none");
-          document.getElementById('episode2').innerHTML = "Episode II:";
-          document.getElementById('episode2TitleShow').innerHTML = "Attack of the Clones";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "Attack of the Clones";
         }
         if (episodePicker == "https://swapi.co/api/films/3/") {
-          document.getElementById('trailerLink3').classList.remove("d-none");
-          document.getElementById('episode3').innerHTML = "Episode III:";
-          document.getElementById('episode3TitleShow').innerHTML = "Revenge of the Sith";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "Revenge of the Sith";
         }
         if (episodePicker == "https://swapi.co/api/films/4/") {
-          document.getElementById('trailerLink4').classList.remove("d-none");
-          document.getElementById('episode4').innerHTML = "Episode IV:";
-          document.getElementById('episode4TitleShow').innerHTML = "A New Hope";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "A New Hope";
         }
         if (episodePicker == "https://swapi.co/api/films/5/") {
-          document.getElementById('trailerLink5').classList.remove("d-none");
-          document.getElementById('episode5').innerHTML = "Episode V:";
-          document.getElementById('episode5TitleShow').innerHTML = "The Empire Strikes Back";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Empire Strikes Back";
         }
         if (episodePicker == "https://swapi.co/api/films/6/") {
-          document.getElementById('trailerLink6').classList.remove("d-none");
-          document.getElementById('episode6').innerHTML = "Episode VI:";
-          document.getElementById('episode6TitleShow').innerHTML = "Return of the Jedi";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "Return of the Jedi";
         }
         if (episodePicker == "https://swapi.co/api/films/7/") {
-          document.getElementById('trailerLink7').classList.remove("d-none");
-          document.getElementById('episode7').innerHTML = "Episode VII:";
-          document.getElementById('episode7TitleShow').innerHTML = "The Force Awakens";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Force Awakens";
         }
         if (episodePicker == "https://swapi.co/api/films/8/") {
-          document.getElementById('trailerLink8').classList.remove("d-none");
-          document.getElementById('episode8').innerHTML = "Episode VIII:";
-          document.getElementById('episode8TitleShow').innerHTML = "The Last Jedi";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Last Jedi";
         }
         if (episodePicker == "https://swapi.co/api/films/9/") {
-          document.getElementById('trailerLink9').classList.remove("d-none");
-          document.getElementById('episode9').innerHTML = "Episode IX:";
-          document.getElementById('episode9TitleShow').innerHTML = "The Rise of Skywalker";
+          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Rise of Skywalker";
         }
       }
 
-      //Send data to locations on page
-      document.getElementById('characterPicker').innerHTML = characterPicker;
-      document.getElementById('name').innerHTML = dataParsed.name;
-      document.getElementById('height').innerHTML = heightCm;
-      document.getElementById('heightFt').innerHTML = heightFt;
-      document.getElementById('mass').innerHTML = massKg;
-      document.getElementById('massLb').innerHTML = massLb;
-      document.getElementById('hair').innerHTML = dataParsed.hair_color;
-      document.getElementById('skin').innerHTML = dataParsed.skin_color;
-      document.getElementById('eyes').innerHTML = dataParsed.eye_color;
-      document.getElementById('birth').innerHTML = dataParsed.birth_year;
-      document.getElementById("gender").innerHTML = dataParsed.gender;
+
+
+
     }
   </script>
 

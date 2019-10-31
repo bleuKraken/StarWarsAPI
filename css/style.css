@@ -17,15 +17,12 @@ body {
   color: #D7C078;
 }
 
-#title {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
 #generatorButton {}
 
 .button-background {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.5);
+  color: #FFC107; /* Bootstrap color */
 }
 
 .text-lg {
@@ -41,7 +38,7 @@ body {
 }
 
 h1 {
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
   color: rgb(250, 201, 27);
   font-weight: bold;
 }
@@ -65,12 +62,14 @@ h1 {
 
 .planet-column p:hover,
 .person p:hover {
+  background-color: rgba(0, 0, 0, 0);
   color: rgba(239, 187, 31);
 }
 
 .movieLink {
-  border: 1px solid #777;
+  border: 2px solid #777;
   font-weight: bold;
+  background-color: rgba(0, 0, 0, 0); /* Backup for bootstrapfail */
   color: rgb(240, 80, 78);
 }
 
@@ -112,4 +111,24 @@ p span {
 
 #header {
   margin-top: 50px;
+}
+
+
+@media screen and (max-width: 600px) {
+  #header div{
+    margin-top: -15px;
+  }
+
+  .desktop-mode {
+    display: none;
+  }
+
+  .border-blue {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+ .mobile-mode {
+   display: block !important;
+ }
 }
