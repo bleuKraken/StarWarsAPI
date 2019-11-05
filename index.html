@@ -51,20 +51,20 @@
       <!-- col PLANET DATA -->
       <div class="col-md-4 order-md-1 order-2 border-blue planet-column pt-5">
         <h4 id="planet" class="text-center py-3 column-header font-weight-bold"> From Planet</h4>
-        <p> Name: <span id="planetName"> Unknown </span> </p>
-        <p> Terrain: <span id="terrain"> Unknown </span> </p>
+        <p> Name: <span class="planetName"> Unknown </span> </p>
+        <p> Terrain: <span class="terrain"> Unknown </span> </p>
         <!-- P IS NEW LINE OF 2 DIFFERENT UNITS -->
         <p>
           Planet Diameter <br>
-          <span id="planetDiameter"> Unknown </span>
+          <span class="planetDiameter"> Unknown </span>
           <span class="unit font-weight-bold">km</span> or
-          <span id="planetDiameterMi">Unknown</span>mi
+          <span class="planetDiameterMi">Unknown</span>mi
         </p>
-        <p> Days in a Year: <span id="daysInYear"> Unknown </span> </p>
-        <p> Hours in a Day: <span id="hoursInDay"> Unknown </span> </p>
-        <p> Gravity: <span id="gravity"> Unknown </span> </p>
-        <p> Climate: <span id="climate"> Unknown </span> </p>
-        <p> Population: <span id="population"> Unknown </span> </p>
+        <p> Days in a Year: <span class="daysInYear"> Unknown </span> </p>
+        <p> Hours in a Day: <span class="hoursInDay"> Unknown </span> </p>
+        <p> Gravity: <span class="gravity"> Unknown </span> </p>
+        <p> Climate: <span class="climate"> Unknown </span> </p>
+        <p> Population: <span class="population"> Unknown </span> </p>
       </div>
 
       <!-- col CHARACTER DATA -->
@@ -84,6 +84,8 @@
       <!-- col FILMS DATA -->
       <div class="col-md-4 order-md-3 order-3 border-blue filmList pt-5">
         <h4 id="filmSection" class="text-center py-3 column-header font-weight-bold"> Appears On</h4>
+
+
         <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="trailerLink1" class="d-none movie-container">
           <div class="floatUp movieLink my-1 w-100"> <span id="episode1"></span> <span id="episode1TitleShow"></span></div>
         </a>
@@ -111,6 +113,7 @@
         <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="trailerLink9" class="d-none movie-container">
           <div class="floatUp movieLink my-1 w-100"> <span id="episode9"></span> <span id="episode9TitleShow"></span></div>
         </a>
+
       </div>
     </div>
   </section>
@@ -125,9 +128,9 @@
     <div id="accordion">
       <div class="card">
         <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Collapsible Group Item #1
+          <h5 class="mb-0 text-center">
+            <button class="btn font-weight-bold accordian-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Character Stats
             </button>
           </h5>
         </div>
@@ -146,48 +149,80 @@
         </div>
       </div>
 
-      <!-- I AM BOTTOM -->>
+      <!-- I AM BOTTOM -->
       <div class="card">
         <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Collapsible Group Item #2
+          <h5 class="mb-0 text-center">
+            <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Home Planet
             </button>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-            aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <p> Name: <span class="planetName"> Unknown </span> </p>
+            <p> Terrain: <span class="terrain"> Unknown </span> </p>
+            <!-- P IS NEW LINE OF 2 DIFFERENT UNITS -->
+            <p>
+              Planet Diameter <br>
+              <span class="planetDiameter"> Unknown </span>
+              <span class="unit font-weight-bold">km</span> or <!-- THIS WAS ALREADY A CLASS. TODO: DELETE THIS COMMENT -->
+              <span class="planetDiameterMi">Unknown</span>mi
+            </p>
+            <p> Days in a Year: <span class="daysInYear"> Unknown </span> </p>
+            <p> Hours in a Day: <span class="hoursInDay"> Unknown </span> </p>
+            <p> Gravity: <span class="gravity"> Unknown </span> </p>
+            <p> Climate: <span class="climate"> Unknown </span> </p>
+            <p> Population: <span class="population"> Unknown </span> </p>
           </div>
         </div>
       </div>
 
 
-
-
-
-
-      <!--
-
       <div class="card">
         <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Collapsible Group Item #3
+          <h5 class="mb-0 text-center">
+            <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Appears on
             </button>
           </h5>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-            aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+            <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="mobile-trailerLink1" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode1"></span> <span id="mobile-episode1TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="mobile-trailerLink2" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode2"></span> <span id="mobile-episode2TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="mobile-trailerLink3" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode3"></span> <span id="mobile-episode3TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="mobile-trailerLink4" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="mobile-episode4"></span> <span id="mobile-episode4TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="mobile-trailerLink5" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode5"></span> <span id="mobile-episode5TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="mobile-trailerLink6" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode6"></span> <span id="mobile-episode6TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="mobile-trailerLink7" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode7"></span> <span id="mobile-episode7TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="mobile-trailerLink8" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode8"></span> <span id="mobile-episode8TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="mobile-trailerLink9" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode9"></span> <span id="mobile-episode9TitleShow"></span></div>
+            </a>
+
+
           </div>
         </div>
       </div>
-    -->
+
     </div>
   </section>
 
@@ -213,16 +248,31 @@
       var planetDiameterMi = planetDiameterKm / 1.609344;
       planetDiameterMi = planetDiameterMi.toFixed(2);
 
-      //Send data to locations on page
-      document.getElementById('planetName').innerHTML = planetDataParsed.name;
-      document.getElementById('terrain').innerHTML = planetDataParsed.terrain;
-      document.getElementById('planetDiameter').innerHTML = planetDataParsed.diameter;
-      document.getElementById('planetDiameterMi').innerHTML = planetDiameterMi;
-      document.getElementById('daysInYear').innerHTML = planetDataParsed.orbital_period;
-      document.getElementById('hoursInDay').innerHTML = planetDataParsed.rotation_period;
-      document.getElementById('gravity').innerHTML = planetDataParsed.gravity;
-      document.getElementById('climate').innerHTML = planetDataParsed.climate;
-      document.getElementById('population').innerHTML = planetDataParsed.population;
+
+
+      var planetName = document.getElementsByClassName('planetName');
+      var planetTerrain = document.getElementsByClassName('terrain');
+      var planetDiameter = document.getElementsByClassName('planetDiameter');
+      var planetDiameterInMiles = document.getElementsByClassName('planetDiameterMi');
+      var planetDaysInYear = document.getElementsByClassName('daysInYear');
+      var planetHoursInDay = document.getElementsByClassName('hoursInDay');
+      var planetGravity = document.getElementsByClassName('gravity');
+      var planetClimate = document.getElementsByClassName('climate');
+      var planetPopulation = document.getElementsByClassName('population');
+
+      /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
+      for (var counter = 0; counter <= 1; counter++) {
+        planetName[counter].innerHTML = planetDataParsed.name;
+        planetTerrain[counter].innerHTML = planetDataParsed.terrain;
+        planetDiameter[counter].innerHTML = planetDataParsed.diameter;
+        planetDiameterInMiles[counter].innerHTML = planetDiameterMi;
+        planetDaysInYear[counter].innerHTML = planetDataParsed.orbital_period;
+        planetHoursInDay[counter].innerHTML = planetDataParsed.rotation_period;
+        planetGravity[counter].innerHTML = planetDataParsed.gravity;
+        planetClimate[counter].innerHTML = planetDataParsed.climate;
+        planetPopulation[counter].innerHTML = planetDataParsed.population;
+      }
+
     }
   </script>
 
@@ -304,12 +354,18 @@
       for (var counter = 0; counter < 9; counter++) {
         var episodePicker = dataParsed.films[counter];
 
-
+        //TODO: Attempted to shrink. Failed.
         movieCounter = counter + 1;
+        //TODO:Experimental
+
         if (episodePicker == "https://swapi.co/api/films/1/") {
           document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
           document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
           document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
+
+          document.getElementById('mobile-trailerLink' + movieCounter).classList.remove("d-none");
+          document.getElementById('mobile-episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
+          document.getElementById('mobile-episode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
         }
         if (episodePicker == "https://swapi.co/api/films/2/") {
           document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
@@ -352,8 +408,6 @@
           document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Rise of Skywalker";
         }
       }
-
-
 
 
     }

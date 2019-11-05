@@ -5,6 +5,7 @@ body {
   height: 100vh;
   overflow: auto;
   */
+
 }
 
 #name {
@@ -104,6 +105,12 @@ p span {
   color: #fff;
 }
 
+
+.accordian-btn {
+  color: #F0B084 !important;
+  font-size: 1.5rem;
+}
+
 #allColumns {
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
@@ -112,6 +119,27 @@ p span {
 #header {
   margin-top: 50px;
 }
+
+.btn-link {
+  color: #fff !important;
+}
+
+
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #15509F;
+}
+
+.card-body p {
+  font-weight: bold;
+  background-color: rgb(0, 0, 0);
+  color: #D7C078;
+}
+
+
+
+
 
 
 @media screen and (max-width: 600px) {
