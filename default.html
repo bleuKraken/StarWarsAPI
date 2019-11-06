@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/javascript.js"></script>
+  <title>StarWars Info</title>
+</head>
+
+<body>
+  <!-- STORY BEGINS HERE -->
+  <div id="header" class="">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center mb-2 header-text">
+          Star Wars Character Data
+        </h1>
+        <!--  TODO: Future Feature
+        <div class="d-flex justify-content-between mb-4">
+          <a href="#" class="header-button ml-5">View All Planets</a>
+          <a href="#" class="header-button mr-5">View All Characters</a>
+        </div>
+      -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION HEADER -->
+  <header class="container">
+    <div class="row">
+      <div class="col">
+        <h4 id="name" class="text-center py-3 font-weight-bold text-lg"> Name</h4>
+        <div class="text-center">
+          <div class="button-background text-center">
+            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- THIS SECTION ONLY SHOWS ON DESKTOP MODE -->
+  <!-- SECTION INFO OF CHARACTER -->
+  <section class="container desktop-mode">
+    <div id="allColumns" class="row">
+
+      <!-- col PLANET DATA -->
+      <div class="col-md-4 order-md-1 order-2 border-blue planet-column pt-5">
+        <h4 id="planet" class="text-center py-3 column-header font-weight-bold"> From Planet</h4>
+        <p> Name: <span class="planetName"> Unknown </span> </p>
+        <p> Terrain: <span class="terrain"> Unknown </span> </p>
+        <!-- P IS NEW LINE OF 2 DIFFERENT UNITS -->
+        <p>
+          Planet Diameter <br>
+          <span class="planetDiameter"> Unknown </span>
+          <span class="unit font-weight-bold">km</span> or
+          <span class="planetDiameterMi">Unknown</span>mi
+        </p>
+        <p> Days in a Year: <span class="daysInYear"> Unknown </span> </p>
+        <p> Hours in a Day: <span class="hoursInDay"> Unknown </span> </p>
+        <p> Gravity: <span class="gravity"> Unknown </span> </p>
+        <p> Climate: <span class="climate"> Unknown </span> </p>
+        <p> Population: <span class="population"> Unknown </span> </p>
+      </div>
+
+      <!-- CHARACTER DATA -->
+      <div class="col-md-4 order-md-2 order-1 border-blue person">
+        <p class="text-center pt-2">Character #:<span class="character-id-number"></span> </p>
+        <h4 class="text-center pt-1 pb-3 column-header font-weight-bold"> Character Stats</h4>
+        <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
+        <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
+        <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
+        <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
+        <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
+        <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
+        <p> Gender: <span class="character-gender"> Unknown </span> </p>
+      </div>
+
+      <!-- col FILMS DATA -->
+      <div class="col-md-4 order-md-3 order-3 border-blue filmList pt-5">
+        <h4 id="filmSection" class="text-center py-3 column-header font-weight-bold"> Appears On</h4>
+        <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="trailerLink1" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode1"></span> <span id="episode1TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="trailerLink2" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode2"></span> <span id="episode2TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="trailerLink3" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode3"></span> <span id="episode3TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="trailerLink4" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="episode4"></span> <span id="episode4TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="trailerLink5" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode5"></span> <span id="episode5TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="trailerLink6" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode6"></span> <span id="episode6TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="trailerLink7" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode7"></span> <span id="episode7TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="trailerLink8" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode8"></span> <span id="episode8TitleShow"></span></div>
+        </a>
+        <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="trailerLink9" class="d-none movie-container">
+          <div class="floatUp movieLink my-1 w-100"> <span id="episode9"></span> <span id="episode9TitleShow"></span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- THIS SECTION ONLY SHOWS ON MOBILE -->
+  <section class="mobile-mode d-none">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0 text-center">
+            <button class="btn font-weight-bold accordian-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Character Stats
+            </button>
+          </h5>
+        </div>
+        <!-- CHARACTER STATS SECTION -->
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <p class="text-center pt-2">Character #:<span class="character-id-number"></span> </p>
+            <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
+            <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
+            <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
+            <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
+            <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
+            <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
+            <p> Gender: <span class="character-gender"> Unknown </span> </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLANET STATS SECTION -->
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0 text-center">
+            <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Home Planet
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <p> Name: <span class="planetName"> Unknown </span> </p>
+            <p> Terrain: <span class="terrain"> Unknown </span> </p>
+            <!-- P IS NEW LINE OF 2 DIFFERENT UNITS -->
+            <p>
+              Planet Diameter <br>
+              <span class="planetDiameter"> Unknown </span>
+              <span class="unit font-weight-bold">km</span> or
+              <span class="planetDiameterMi">Unknown</span>mi
+            </p>
+            <p> Days in a Year: <span class="daysInYear"> Unknown </span> </p>
+            <p> Hours in a Day: <span class="hoursInDay"> Unknown </span> </p>
+            <p> Gravity: <span class="gravity"> Unknown </span> </p>
+            <p> Climate: <span class="climate"> Unknown </span> </p>
+            <p> Population: <span class="population"> Unknown </span> </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPEARS ON MOVIES CARD SECTION -->
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0 text-center">
+            <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Appears on
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="mobileTrailerLink1" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode1"></span> <span id="mobileEpisode1TitleShow"></span> </div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="mobileTrailerLink2" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode2"></span> <span id="mobileEpisode2TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="mobileTrailerLink3" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode3"></span> <span id="mobileEpisode3TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="mobileTrailerLink4" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="mobileEpisode4"></span> <span id="mobileEpisode4TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="mobileTrailerLink5" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode5"></span> <span id="mobileEpisode5TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="mobileTrailerLink6" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode6"></span> <span id="mobileEpisode6TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="mobileTrailerLink7" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode7"></span> <span id="mobileEpisode7TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="mobileTrailerLink8" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode8"></span> <span id="mobileEpisode8TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="mobileTrailerLink9" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode9"></span> <span id="mobileEpisode9TitleShow"></span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARCTER STATS GENERATE episodePicker-->
+  <script>
+  </script>
+
+  <!-- FONT AWSOME -->
+  <script src="https://kit.fontawesome.com/10a1582225.js"></script>
+  <!-- jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- JAVASCRIPT FOR BOOTSTRAP CLASSES -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
