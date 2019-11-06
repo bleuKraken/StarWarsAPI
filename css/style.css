@@ -1,3 +1,5 @@
+
+
 body {
   background: url("https://raw.githubusercontent.com/erickkg/StarWarsAPI/master/img/background.jpg") no-repeat center center fixed;
   background-size: 100% 100%;
@@ -17,8 +19,6 @@ body {
   background-color: rgb(0, 0, 0);
   color: #D7C078;
 }
-
-#generatorButton {}
 
 .button-background {
   display: inline-block;
@@ -63,11 +63,13 @@ h1 {
 
 .planet-column p:hover,
 .person p:hover {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0);
   color: rgba(239, 187, 31);
 }
 
 .movieLink {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   border: 2px solid #777;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0); /* Backup for bootstrapfail */
@@ -75,7 +77,7 @@ h1 {
 }
 
 .movieLink:hover {
-  background-color: rgba(200, 200, 200, 0.5);
+  background-color: rgba(210, 210, 210, 0.5);
   color: #fff;
   display: block;
 }
@@ -106,10 +108,47 @@ p span {
 }
 
 
+
+
+
+
+
+
+.btn-generate-new {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #D7D98E;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.75rem;
+  border: 2px solid #A1A332;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+.btn {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem
+    rgba(0,123,255,.5);
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .3rem
+    rgba(0,0,0,0);
+}
+
 .accordian-btn {
+  background-color: rgba(0, 0, 0, 0);
   color: #F0B084 !important;
   font-size: 1.5rem;
 }
+
+
 
 #allColumns {
   background: rgba(0, 0, 0, 0.6);
@@ -120,14 +159,11 @@ p span {
   margin-top: 50px;
 }
 
-.btn-link {
-  color: #fff !important;
-}
-
 
 
 .card {
   background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   border: 2px solid #15509F;
 }
 
@@ -143,8 +179,13 @@ p span {
 
 
 @media screen and (max-width: 600px) {
+
   #header div{
     margin-top: -15px;
+  }
+
+  .header-text {
+    font-size: 2rem;
   }
 
   .desktop-mode {
@@ -159,4 +200,10 @@ p span {
  .mobile-mode {
    display: block !important;
  }
+
+ .card {
+   font-size: 1.1rem;
+ }
+
+
 }

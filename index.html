@@ -8,15 +8,16 @@
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/javascript.js"></script>
   <title>StarWars Info</title>
 </head>
 
 <body>
   <!-- STORY BEGINS HERE -->
-  <div id="header" class="container">
+  <div id="header" class="">
     <div class="row">
       <div class="col">
-        <h1 class="text-center mb-2">
+        <h1 class="text-center mb-2 header-text">
           Star Wars Character Data
         </h1>
         <!--  TODO: Future Feature
@@ -36,7 +37,7 @@
         <h4 id="name" class="text-center py-3 font-weight-bold text-lg"> Name</h4>
         <div class="text-center">
           <div class="button-background text-center">
-            <button id="generatorButton" type="button" class="btn btn-outline-warning font-weight-bold mb-2" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
+            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
           </div>
         </div>
       </div>
@@ -67,11 +68,10 @@
         <p> Population: <span class="population"> Unknown </span> </p>
       </div>
 
-      <!-- col CHARACTER DATA -->
+      <!-- CHARACTER DATA -->
       <div class="col-md-4 order-md-2 order-1 border-blue person">
-        <p class="text-center pt-2">Character #:<span id="characterPicker"></span> </p>
+        <p class="text-center pt-2">Character #:<span class="character-id-number"></span> </p>
         <h4 class="text-center pt-1 pb-3 column-header font-weight-bold"> Character Stats</h4>
-
         <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
         <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
         <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
@@ -84,8 +84,6 @@
       <!-- col FILMS DATA -->
       <div class="col-md-4 order-md-3 order-3 border-blue filmList pt-5">
         <h4 id="filmSection" class="text-center py-3 column-header font-weight-bold"> Appears On</h4>
-
-
         <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="trailerLink1" class="d-none movie-container">
           <div class="floatUp movieLink my-1 w-100"> <span id="episode1"></span> <span id="episode1TitleShow"></span></div>
         </a>
@@ -118,11 +116,6 @@
     </div>
   </section>
 
-
-
-
-
-
   <!-- THIS SECTION ONLY SHOWS ON MOBILE -->
   <section class="mobile-mode d-none">
     <div id="accordion">
@@ -134,9 +127,10 @@
             </button>
           </h5>
         </div>
-        <!-- ACCORDIAN 1 SECTION CONTENT-->
+        <!-- CHARACTER STATS SECTION -->
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
+            <p class="text-center pt-2">Character #:<span class="character-id-number"></span> </p>
             <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
             <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
             <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
@@ -144,12 +138,11 @@
             <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
             <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
             <p> Gender: <span class="character-gender"> Unknown </span> </p>
-
           </div>
         </div>
       </div>
 
-      <!-- I AM BOTTOM -->
+      <!-- PLANET STATS SECTION -->
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0 text-center">
@@ -166,7 +159,7 @@
             <p>
               Planet Diameter <br>
               <span class="planetDiameter"> Unknown </span>
-              <span class="unit font-weight-bold">km</span> or <!-- THIS WAS ALREADY A CLASS. TODO: DELETE THIS COMMENT -->
+              <span class="unit font-weight-bold">km</span> or
               <span class="planetDiameterMi">Unknown</span>mi
             </p>
             <p> Days in a Year: <span class="daysInYear"> Unknown </span> </p>
@@ -178,7 +171,7 @@
         </div>
       </div>
 
-
+      <!-- APPEARS ON MOVIES CARD SECTION -->
       <div class="card">
         <div class="card-header" id="headingThree">
           <h5 class="mb-0 text-center">
@@ -189,228 +182,41 @@
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
-
-            <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="mobile-trailerLink1" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode1"></span> <span id="mobile-episode1TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="mobileTrailerLink1" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode1"></span> <span id="mobileEpisode1TitleShow"></span> </div>
             </a>
-            <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="mobile-trailerLink2" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode2"></span> <span id="mobile-episode2TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="mobileTrailerLink2" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode2"></span> <span id="mobileEpisode2TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="mobile-trailerLink3" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode3"></span> <span id="mobile-episode3TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="mobileTrailerLink3" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode3"></span> <span id="mobileEpisode3TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="mobile-trailerLink4" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="mobile-episode4"></span> <span id="mobile-episode4TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="mobileTrailerLink4" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="mobileEpisode4"></span> <span id="mobileEpisode4TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="mobile-trailerLink5" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode5"></span> <span id="mobile-episode5TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="mobileTrailerLink5" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode5"></span> <span id="mobileEpisode5TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="mobile-trailerLink6" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode6"></span> <span id="mobile-episode6TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="mobileTrailerLink6" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode6"></span> <span id="mobileEpisode6TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="mobile-trailerLink7" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode7"></span> <span id="mobile-episode7TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="mobileTrailerLink7" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode7"></span> <span id="mobileEpisode7TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="mobile-trailerLink8" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode8"></span> <span id="mobile-episode8TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="mobileTrailerLink8" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode8"></span> <span id="mobileEpisode8TitleShow"></span></div>
             </a>
-            <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="mobile-trailerLink9" class="d-none movie-container">
-              <div class="floatUp movieLink my-1 w-100"> <span id="mobile-episode9"></span> <span id="mobile-episode9TitleShow"></span></div>
+            <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="mobileTrailerLink9" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileEpisode9"></span> <span id="mobileEpisode9TitleShow"></span></div>
             </a>
-
-
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-
-  <!-- GENERATE PLANET INFO -->
+  <!-- CHARCTER STATS GENERATE episodePicker-->
   <script>
-    // API key and url
-    var requestPlanetURL = "https://swapi.co/api/planets/1";
-    // Have to make a new request
-    var requestPlanet = new XMLHttpRequest();
-    //I am going to GET, THIS URL
-    requestPlanet.open('GET', requestPlanetURL);
-    //What type is it?
-    requestPlanet.responseType = 'text';
-    //Send!
-    requestPlanet.send();
-
-    //Request fulfilled, whats happens on page load and when it returns?
-    requestPlanet.onload = function() {
-      var planetDataResponse = requestPlanet.response;
-      var planetDataParsed = JSON.parse(planetDataResponse);
-      var planetDiameterKm = planetDataParsed.diameter;
-      var planetDiameterMi = planetDiameterKm / 1.609344;
-      planetDiameterMi = planetDiameterMi.toFixed(2);
-
-
-
-      var planetName = document.getElementsByClassName('planetName');
-      var planetTerrain = document.getElementsByClassName('terrain');
-      var planetDiameter = document.getElementsByClassName('planetDiameter');
-      var planetDiameterInMiles = document.getElementsByClassName('planetDiameterMi');
-      var planetDaysInYear = document.getElementsByClassName('daysInYear');
-      var planetHoursInDay = document.getElementsByClassName('hoursInDay');
-      var planetGravity = document.getElementsByClassName('gravity');
-      var planetClimate = document.getElementsByClassName('climate');
-      var planetPopulation = document.getElementsByClassName('population');
-
-      /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
-      for (var counter = 0; counter <= 1; counter++) {
-        planetName[counter].innerHTML = planetDataParsed.name;
-        planetTerrain[counter].innerHTML = planetDataParsed.terrain;
-        planetDiameter[counter].innerHTML = planetDataParsed.diameter;
-        planetDiameterInMiles[counter].innerHTML = planetDiameterMi;
-        planetDaysInYear[counter].innerHTML = planetDataParsed.orbital_period;
-        planetHoursInDay[counter].innerHTML = planetDataParsed.rotation_period;
-        planetGravity[counter].innerHTML = planetDataParsed.gravity;
-        planetClimate[counter].innerHTML = planetDataParsed.climate;
-        planetPopulation[counter].innerHTML = planetDataParsed.population;
-      }
-
-    }
-  </script>
-
-  <!-- CHARCTER STATS GENERATE -->
-  <script>
-    var characterPicker = (Math.floor(Math.random() * 89) + 1);
-    // API key and url
-    var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
-    // Have to make a new request
-    var request = new XMLHttpRequest();
-    //I am going to GET, THIS URL
-    request.open('GET', requestURL);
-    //What type is it?
-    request.responseType = 'text';
-    //Send!
-    request.send();
-
-    //Request fulfilled, whats happens on page load and when it returns?
-    request.onload = function() {
-      var dataResponse = request.response;
-      var dataParsed = JSON.parse(dataResponse);
-      // Get units and convert
-      var heightCm = dataParsed.height;
-      var massKg = dataParsed.mass;
-      //Converted vars
-      parseFloat(heightCm);
-      heightIn = heightCm / 2.54;
-      var massLb = massKg * 2.2;
-      // Decimal place value
-      heightIn = heightIn.toFixed(2);
-      massLb = massLb.toFixed(2)
-      var filmTotal = dataParsed.films.length;
-      document.getElementById('name').innerHTML = dataParsed.name;
-
-      /* ADDING MOBILE HERE */
-      var characterHeight = document.getElementsByClassName('character-height');
-      var characterHeightIn = document.getElementsByClassName('character-heightIn');
-      var characterMass = document.getElementsByClassName('character-mass');
-      var characterMassLb = document.getElementsByClassName('character-massLb');
-      var characterHair = document.getElementsByClassName('character-hair');
-      var characterEyes = document.getElementsByClassName('character-eyes');
-      var characterSkin = document.getElementsByClassName('character-skin');
-      var characterBirth = document.getElementsByClassName('character-birth');
-      var characterGender = document.getElementsByClassName('character-gender');
-
-      /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
-      for (var counter = 0; counter <= 1; counter++) {
-        characterEyes[counter].innerHTML = dataParsed.eye_color;
-        characterHeight[counter].innerHTML = dataParsed.height;
-        characterHeightIn[counter].innerHTML = heightIn;
-        characterMass[counter].innerHTML = dataParsed.mass;
-        characterMassLb[counter].innerHTML = massLb;
-        characterHair[counter].innerHTML = dataParsed.hair_color;
-        characterSkin[counter].innerHTML = dataParsed.skin_color;
-        characterBirth[counter].innerHTML = dataParsed.birth_year;
-        characterGender[counter].innerHTML = dataParsed.gender;
-      }
-
-      /*
-      TODO: Might be able to shrink code below using an array or multidemensional array.
-      */
-      //For every link that shows, display that episode title
-      var movieCounter = 0;
-      var stringMovieLink = [
-        "https://swapi.co/api/films/1/",
-        "https://swapi.co/api/films/2/",
-        "https://swapi.co/api/films/3/",
-        "https://swapi.co/api/films/4/",
-        "https://swapi.co/api/films/5/",
-        "https://swapi.co/api/films/6/",
-        "https://swapi.co/api/films/7/",
-        "https://swapi.co/api/films/8/",
-        "https://swapi.co/api/films/9/"
-      ];
-      var romanNumber = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
-      var episodeTitle = ["The Phantom Menace", "Attack of the Clones", "Revenge of the Sith", "A New Hope", "The Empire Strikes Back", "Return of the Jedi", "The Force Awakens", "The Last Jedi", "The Rise of Skywalker"];
-
-      //TODO: Maybe change 9 to "film.length from array total"
-      for (var counter = 0; counter < 9; counter++) {
-        var episodePicker = dataParsed.films[counter];
-
-        //TODO: Attempted to shrink. Failed.
-        movieCounter = counter + 1;
-        //TODO:Experimental
-
-        if (episodePicker == "https://swapi.co/api/films/1/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
-
-          document.getElementById('mobile-trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('mobile-episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('mobile-episode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
-        }
-        if (episodePicker == "https://swapi.co/api/films/2/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "Attack of the Clones";
-        }
-        if (episodePicker == "https://swapi.co/api/films/3/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "Revenge of the Sith";
-        }
-        if (episodePicker == "https://swapi.co/api/films/4/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "A New Hope";
-        }
-        if (episodePicker == "https://swapi.co/api/films/5/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Empire Strikes Back";
-        }
-        if (episodePicker == "https://swapi.co/api/films/6/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "Return of the Jedi";
-        }
-        if (episodePicker == "https://swapi.co/api/films/7/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Force Awakens";
-        }
-        if (episodePicker == "https://swapi.co/api/films/8/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Last Jedi";
-        }
-        if (episodePicker == "https://swapi.co/api/films/9/") {
-          document.getElementById('trailerLink' + movieCounter).classList.remove("d-none");
-          document.getElementById('episode' + movieCounter).innerHTML = "Episode " + romanNumber[counter] + ":";
-          document.getElementById('episode' + movieCounter + 'TitleShow').innerHTML = "The Rise of Skywalker";
-        }
-      }
-
-
-    }
   </script>
 
   <!-- FONT AWSOME -->
