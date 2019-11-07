@@ -20,17 +20,12 @@
 
 <body>
   <!-- STORY BEGINS HERE -->
-  <header id="header-title" class="container">
-    <div class="row d-block text-center">
+  <header id="header-info" class="container">
+    <div id="header-title" class="row d-block text-center">
       <h1 class="px-2 pt-2 header-text">
         Star Wars Character Data
       </h1>
     </div>
-  </header>
-
-  <!-- SECTION HEADER -->
-  <header id="header-info" class="container">
-    <div class="row">
       <div class="col">
         <h4 class="name text-center font-weight-bold text-lg"> Name</h4>
         <div class="text-center">
@@ -39,14 +34,12 @@
           </div>
         </div>
       </div>
-    </div>
   </header>
 
   <!-- THIS SECTION ONLY SHOWS ON DESKTOP MODE -->
   <!-- SECTION INFO OF CHARACTER -->
   <section class="container desktop-mode">
     <div id="allColumns" class="row">
-
       <!-- col PLANET DATA -->
       <div class="col-md-4 order-md-1 order-2 border-blue planet-column pt-5">
         <h4 id="planet" class="text-center py-3 column-header font-weight-bold"> From Planet</h4>
@@ -65,7 +58,6 @@
         <p> Climate: <span class="climate"> Unknown </span> </p>
         <p> Population: <span class="population"> Unknown </span> </p>
       </div>
-
       <!-- CHARACTER DATA -->
       <div class="col-md-4 order-md-2 order-1 border-blue person">
         <p class="text-center pt-2">Character #:<span class="character-id-number"></span> </p>
@@ -78,7 +70,6 @@
         <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
         <p> Gender: <span class="character-gender"> Unknown </span> </p>
       </div>
-
       <!-- col FILMS DATA -->
       <div class="col-md-4 order-md-3 order-3 border-blue filmList pt-5">
         <h4 id="filmSection" class="text-center py-3 column-header font-weight-bold"> Appears On</h4>
@@ -113,21 +104,12 @@
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
   <!-- THIS SECTION ONLY SHOWS ON MOBILE LANDSCAPE -->
   <section class="mobile-landscape-mode d-none">
     <!-- SECTION HEADER -->
     <header class="container">
       <div class="row">
-        <div class="col d-flex justify-content-around">
+        <div class="col pt-2 d-flex justify-content-around">
           <h4 class="name font-weight-bold text-lg m-2"> Name</h4>
           <div class="button-background text-center">
             <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
@@ -162,32 +144,26 @@
             </h5>
           </div>
         </div>
-
-
-
         <!-- CHARACTER STATS SECTION -->
         <div class="card">
-
-        <div id="collapseMobileLandscape" class="collapse show" aria-labelledby="mobileLandscapeOne" data-parent="#accordionMobileLandscape">
-          <div class="card-body">
-            <p class="text-center">Character #:<span class="character-id-number"></span> </p>
-            <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
-            <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
-            <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
-            <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
-            <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
-            <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
-            <p> Gender: <span class="character-gender"> Unknown </span> </p>
+          <div id="collapseMobileLandscape" class="collapse show" aria-labelledby="mobileLandscapeOne" data-parent="#accordionMobileLandscape">
+            <div class="card-body">
+              <p class="text-center">Character #:<span class="character-id-number"></span> </p>
+              <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
+              <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
+              <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
+              <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
+              <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
+              <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
+              <p> Gender: <span class="character-gender"> Unknown </span> </p>
+            </div>
           </div>
         </div>
-      </div>
-
-
         <!-- PLANET STATS SECTION -->
         <div class="card">
           <div id="collapseMobileLandscapeTwo" class="collapse" aria-labelledby="mobileLandscapeTwo" data-parent="#accordionMobileLandscape">
             <div class="card-body">
-              <p> Name: <span class="planetName"> Unknown </span> </p>
+              <p class="text-center"> Planet:<span class="planetName"></span> </p>
               <p> Terrain: <span class="terrain"> Unknown </span> </p>
               <!-- P IS NEW LINE OF 2 DIFFERENT UNITS -->
               <p>
@@ -204,7 +180,6 @@
             </div>
           </div>
         </div>
-
         <!-- APPEARS ON MOVIES CARD SECTION -->
         <div class="card pb-2">
         </div>
@@ -243,22 +218,13 @@
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
   <!-- THIS SECTION ONLY SHOWS ON MOBILE -->
   <section class="mobile-mode d-none">
     <div id="accordion">
       <div class="card">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0 text-center">
-            <button class="btn font-weight-bold accordian-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="btn font-weight-bold" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               Character Stats
             </button>
           </h5>
@@ -277,12 +243,11 @@
           </div>
         </div>
       </div>
-
       <!-- PLANET STATS SECTION -->
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0 text-center">
-            <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <button class="btn font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Home Planet
             </button>
           </h5>
@@ -304,14 +269,13 @@
             <p> Climate: <span class="climate"> Unknown </span> </p>
             <p> Population: <span class="population"> Unknown </span> </p>
           </div>
-        </div> 
+        </div>
       </div>
-
       <!-- APPEARS ON MOVIES CARD SECTION -->
-    Landscape  <div class="card pb-2">Landscape
+      <div class="card pb-2">
         <div class="card-header" id="headingThree">
           <h5 class="mb-0 text-center">
-            <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <button class="btn font-weight-bold collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Appears on
             </button>
           </h5>

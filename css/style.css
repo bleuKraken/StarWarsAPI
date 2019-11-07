@@ -4,19 +4,45 @@
   */
 }
 
+body {
+  background: url("https://raw.githubusercontent.com/erickkg/StarWarsAPI/master/img/background.jpg") no-repeat center center fixed;
+  background-size: 100% 100%;
+}
+
 h1, .card-body {
   font-family: 'PT Serif', serif;
 }
 
-body {
-  background: url("https://raw.githubusercontent.com/erickkg/StarWarsAPI/master/img/background.jpg") no-repeat center center fixed;
-  background-size: 100% 100%;
+h1 {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(250, 201, 27);
+  font-weight: bold;
+}
+
+p span {
+  font-weight: normal !important;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
+
+#allColumns {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+#header {
+  margin-top: 50px;
 }
 
 .name {
   background-color: rgba(0, 0, 0, 0);
   color: #D7D98E;
   text-decoration: underline;
+}
+
+.text-lg {
+  font-size: 2.5rem;
 }
 
 .unit {
@@ -28,10 +54,8 @@ body {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.5);
   color: #FFC107; /* Bootstrap color */
-}
+  margin: 0.25rem;
 
-.text-lg {
-  font-size: 2.5rem;
 }
 
 .floatUp {
@@ -42,24 +66,12 @@ body {
   border: 2px solid #15509F;
 }
 
-h1 {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: rgb(250, 201, 27);
-  font-weight: bold;
-}
-
 .column-header {
   background-color: rgba(0, 0, 0, 0);
   color: #F0B084;
 }
 
-.planet-column p {
-  font-weight: bold;
-  background-color: rgb(0, 0, 0);
-  color: #D7C078;
-}
-
-.person p {
+.planet-column p, .person p {
   font-weight: bold;
   background-color: rgb(0, 0, 0);
   color: #D7C078;
@@ -86,13 +98,6 @@ h1 {
   display: block;
 }
 
-p span {
-  font-weight: normal !important;
-  background-color: rgb(0, 0, 0);
-  color: #fff;
-}
-
-
 .movie-container {
   text-align: center;
 }
@@ -117,29 +122,15 @@ p span {
     outline: 0;
     box-shadow: 0 0 0 .2rem
     rgba(0,123,255,.5);
+    background-color: rgba(0, 0, 0, 0);
+    color: #F0B084 !important;
+    font-size: 1.5rem;
 }
 
 .btn.focus, .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 .3rem
     rgba(0,0,0,0);
-}
-
-.accordian-btn {
-  background-color: rgba(0, 0, 0, 0);
-  color: #F0B084 !important;
-  font-size: 1.5rem;
-}
-
-
-
-#allColumns {
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-
-#header {
-  margin-top: 50px;
 }
 
 .card-header {
@@ -154,13 +145,12 @@ p span {
 
 .card-body p {
   font-weight: bold;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
   color: #D7C078;
 }
 
-
+/* ################# MOBILE LANDSCAPE ########################### */
 @media screen and (min-width: 566px) and (max-width: 812px) {
-
   .mobile-landscape-mode{
     display: block !important;
     border-bottom: 2px solid #15509F;
@@ -182,6 +172,7 @@ p span {
 
   .name {
     font-size: 1.5rem;
+
   }
 
   .btn-generate-new {
@@ -215,19 +206,20 @@ p span {
     margin-right: 5%;
   }
 
-
-
  .card {
    font-size: 1.1rem;
  }
 }
-
+/* ################# MOBILE ########################### */
 @media screen and (max-width: 565px) {
+  .desktop-mode {
+    display: none;
+  }
   .mobile-mode {
     display: block !important;
     border-bottom: 2px solid #15509F;
   }
-  
+
   #header div{
     margin-top: -25px;
   }
@@ -236,16 +228,10 @@ p span {
     font-size: 2rem;
   }
 
-  .desktop-mode {
-    display: none;
-  }
-
   .border-blue {
     margin-left: 5%;
     margin-right: 5%;
   }
-
-
 
  .card {
    font-size: 1.1rem;
