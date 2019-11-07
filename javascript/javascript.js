@@ -47,6 +47,10 @@ requestPlanet.onload = function() {
 
 // ######################### CHARACTER INFO START ############################################################
   var characterPicker = (Math.floor(Math.random() * 89) + 1);
+  if(characterPicker == 17)
+  {
+    characterPicker += 1;
+  }
   // API key and url
   var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
   //var requestURL = "https://swapi.co/api/people/2/"; //TODO: DELTE THIS, USE LINE ABOVE INSTEAD
