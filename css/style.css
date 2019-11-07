@@ -13,7 +13,7 @@ body {
   background-size: 100% 100%;
 }
 
-#name {
+.name {
   background-color: rgba(0, 0, 0, 0);
   color: #D7D98E;
   text-decoration: underline;
@@ -92,14 +92,6 @@ p span {
   color: #fff;
 }
 
-.header-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.25rem;
-  border: 2px solid #B62321;
-  padding: 0.8rem;
-}
 
 .movie-container {
   text-align: center;
@@ -167,7 +159,75 @@ p span {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 566px) and (max-width: 812px) {
+
+  .mobile-landscape-mode{
+    display: block !important;
+    border-bottom: 2px solid #15509F;
+  }
+
+  #header-title {
+    display: none !important;
+  }
+
+  #header-info {
+    display: none !important;
+  }
+
+
+
+  #header div{
+    margin-top: -25px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .btn-generate-new {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border: 1px solid #A1A332;
+  }
+
+
+  .card {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+
+  }
+
+  .card-body {
+    border-bottom: 1px solid  rgba(0, 0, 0, 0);
+  }
+
+
+  .header-text {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .desktop-mode {
+    display: none;
+  }
+
+  .border-blue {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+
+
+ .card {
+   font-size: 1.1rem;
+ }
+}
+
+@media screen and (max-width: 565px) {
+  .mobile-mode {
+    display: block !important;
+    border-bottom: 2px solid #15509F;
+  }
+  
   #header div{
     margin-top: -25px;
   }
@@ -185,9 +245,7 @@ p span {
     margin-right: 5%;
   }
 
- .mobile-mode {
-   display: block !important;
- }
+
 
  .card {
    font-size: 1.1rem;

@@ -46,7 +46,7 @@ requestPlanet.onload = function() {
 // ######################### PLANET INFO END #################################################################
 
 // ######################### CHARACTER INFO START ############################################################
-  var characterPicker = (Math.floor(Math.random() * 89) + 1);
+  var characterPicker = (Math.floor(Math.random() * 88) + 1);
   if(characterPicker == 17)
   {
     characterPicker += 1;
@@ -79,7 +79,10 @@ requestPlanet.onload = function() {
     heightIn = heightIn.toFixed(2);
     massLb = massLb.toFixed(2)
     var filmTotal = dataParsed.films.length;
-    document.getElementById('name').innerHTML = dataParsed.name;
+    document.getElementsByClassName('name').innerHTML = dataParsed.name;
+
+    var characterName = document.getElementsByClassName('name');
+
 
     var characterIdNumber = document.getElementsByClassName('character-id-number');
     var characterHeight = document.getElementsByClassName('character-height');
@@ -92,9 +95,15 @@ requestPlanet.onload = function() {
     var characterBirth = document.getElementsByClassName('character-birth');
     var characterGender = document.getElementsByClassName('character-gender');
 
-    /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
+    //Add names to classes
     for (var counter = 0; counter <= 1; counter++) {
-      characterIdNumber[counter].innerHTML = characterPicker;
+      characterName[counter].innerHTML = dataParsed.name;
+
+    }
+
+    /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
+    for (var counter = 0; counter <= 2; counter++) {
+      characterIdNumber[counter].innerHTML = " " + characterPicker;
       characterEyes[counter].innerHTML = dataParsed.eye_color;
       characterHeight[counter].innerHTML = dataParsed.height;
       characterHeightIn[counter].innerHTML = heightIn;
@@ -139,6 +148,10 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "The Phantom Menace";
       }
 
       if (episodePicker == "https://swapi.co/api/films/2/") {
@@ -151,6 +164,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "Attack of the Clones";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "Attack of the Clones";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/3/") {
@@ -163,6 +181,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "Revenge of the Sith";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "Revenge of the Sith";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/4/") {
@@ -175,6 +198,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "A New Hope";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "A New Hope";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/5/") {
@@ -187,6 +215,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "The Empire Strikes Back";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "The Empire Strikes Back";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/6/") {
@@ -199,6 +232,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "Return of the Jedi";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "Return of the Jedi";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/7/") {
@@ -211,6 +249,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "The Force Awakens";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "The Force Awakens";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/8/") {
@@ -223,6 +266,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "The Last Jedi";
+        //duplicate.Possible shrink.
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscapeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscapeEpisode' + movieCounter + 'TitleShow').innerHTML = "The Last Jedi";
+
       }
 
       if (episodePicker == "https://swapi.co/api/films/9/") {
@@ -235,6 +283,11 @@ requestPlanet.onload = function() {
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "hello";
         document.getElementById('mobileEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
         document.getElementById('mobileEpisode' + movieCounter + 'TitleShow').innerHTML = "The Rise of Skywalker";
+        //duplicate.Possible shrink.Landscpae
+        document.getElementById('mobileLandscapeTrailerLink' + movieCounter).classList.remove("d-none");
+        document.getElementById('mobileLandscpaeEpisode' + movieCounter).innerHTML = "Episode " + romanNumber[episodePicker] + ":";
+        document.getElementById('mobileLandscpaeEpisode' + movieCounter + 'TitleShow').innerHTML = "The Rise of Skywalker";
+
       }
     }
   }

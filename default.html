@@ -12,15 +12,15 @@
   <script src="javascript/javascript.js"></script>
   <title>StarWars Info</title>
 
-  <style type = "text/css">
+  <style type="text/css">
 
 
-</style>
+  </style>
 </head>
 
 <body>
   <!-- STORY BEGINS HERE -->
-  <header class="container">
+  <header id="header-title" class="container">
     <div class="row d-block text-center">
       <h1 class="px-2 pt-2 header-text">
         Star Wars Character Data
@@ -29,10 +29,10 @@
   </header>
 
   <!-- SECTION HEADER -->
-  <header class="container">
+  <header id="header-info" class="container">
     <div class="row">
       <div class="col">
-        <h4 id="name" class="text-center font-weight-bold text-lg"> Name</h4>
+        <h4 class="name text-center font-weight-bold text-lg"> Name</h4>
         <div class="text-center">
           <div class="button-background text-center">
             <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
@@ -109,10 +109,148 @@
         <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="trailerLink9" class="d-none movie-container">
           <div class="floatUp movieLink my-2 w-100"> <span id="episode9"></span> <span id="episode9TitleShow"></span></div>
         </a>
-
       </div>
     </div>
   </section>
+
+
+
+
+
+
+
+
+
+
+  <!-- THIS SECTION ONLY SHOWS ON MOBILE LANDSCAPE -->
+  <section class="mobile-landscape-mode d-none">
+    <!-- SECTION HEADER -->
+    <header class="container">
+      <div class="row">
+        <div class="col d-flex justify-content-around">
+          <h4 class="name font-weight-bold text-lg m-2"> Name</h4>
+          <div class="button-background text-center">
+            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ACCORDIAN -->
+    <div id="accordionMobileLandscape">
+      <!-- CARD TITLES AND BUTTONS -->
+      <div class="card">
+        <div class="d-flex justify-content-center">
+          <div class="card-header" id="mobileLandscapeOne">
+            <h5 class="mb-0 text-center">
+              <button class="btn font-weight-bold accordian-btn" data-toggle="collapse" data-target="#collapseMobileLandscape" aria-expanded="true" aria-controls="collapseMobileLandscape">
+                Character Stats
+              </button>
+            </h5>
+          </div>
+          <div class="card-header" id="mobileLandscapeTwo">
+            <h5 class="mb-0 text-center">
+              <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseMobileLandscapeTwo" aria-expanded="false" aria-controls="collapseMobileLandscapeTwo">
+                Home Planet
+              </button>
+            </h5>
+          </div>
+          <div class="card-header" id="mobileLandscapeThree">
+            <h5 class="mb-0 text-center">
+              <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseMobileLandscapeThree" aria-expanded="false" aria-controls="collapseMobileLandscapeThree">
+                Appears on
+              </button>
+            </h5>
+          </div>
+        </div>
+
+
+
+        <!-- CHARACTER STATS SECTION -->
+        <div class="card">
+
+        <div id="collapseMobileLandscape" class="collapse show" aria-labelledby="mobileLandscapeOne" data-parent="#accordionMobileLandscape">
+          <div class="card-body">
+            <p class="text-center">Character #:<span class="character-id-number"></span> </p>
+            <p> Height: <span class="character-height"> Unknown</span>cm <span class="character-heightIn">Unknown</span> <span class="unit font-weight-bold">in</span></p>
+            <p> Mass: <span class="character-mass"> Unknown</span>kg <span class="character-massLb"> Unknown</span> <span class="unit font-weight-bold">lb</span> </p>
+            <p> Hair Color: <span class="character-hair"> Unknown </span> </p>
+            <p> Skin Color: <span class="character-skin"> Unknown </span> </p>
+            <p> Eye Color: <span class="character-eyes"> Unknown </span> </p>
+            <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
+            <p> Gender: <span class="character-gender"> Unknown </span> </p>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- PLANET STATS SECTION -->
+        <div class="card">
+          <div id="collapseMobileLandscapeTwo" class="collapse" aria-labelledby="mobileLandscapeTwo" data-parent="#accordionMobileLandscape">
+            <div class="card-body">
+              <p> Name: <span class="planetName"> Unknown </span> </p>
+              <p> Terrain: <span class="terrain"> Unknown </span> </p>
+              <!-- P IS NEW LINE OF 2 DIFFERENT UNITS -->
+              <p>
+                Planet Diameter <br>
+                <span class="planetDiameter"> Unknown </span>
+                <span class="unit font-weight-bold">km</span> or
+                <span class="planetDiameterMi">Unknown</span>mi
+              </p>
+              <p> Days in a Year: <span class="daysInYear"> Unknown </span> </p>
+              <p> Hours in a Day: <span class="hoursInDay"> Unknown </span> </p>
+              <p> Gravity: <span class="gravity"> Unknown </span> </p>
+              <p> Climate: <span class="climate"> Unknown </span> </p>
+              <p> Population: <span class="population"> Unknown </span> </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPEARS ON MOVIES CARD SECTION -->
+        <div class="card pb-2">
+        </div>
+        <div id="collapseMobileLandscapeThree" class="collapse" aria-labelledby="mobileLandscapeThree" data-parent="#accordionMobileLandscape">
+          <div class="card-body">
+            <a href="https://www.youtube.com/watch?v=bD7bpG-zDJQ" id="mobileLandscapeTrailerLink1" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode1"></span> <span id="mobileLandscapeEpisode1TitleShow"></span> </div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=gYbW1F_c9eM" id="mobileLandscapeTrailerLink2" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode2"></span> <span id="mobileLandscapeEpisode2TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=5UnjrG_N8hU" id="mobileLandscapeTrailerLink3" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode3"></span> <span id="mobileLandscapeEpisode3TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=9gvqpFbRKtQ" id="mobileLandscapeTrailerLink4" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100 pb-3"> <span id="mobileLandscapeEpisode4"></span> <span id="mobileLandscapeEpisode4TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=xESiohGGP7g" id="mobileLandscapeTrailerLink5" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode5"></span> <span id="mobileLandscapeEpisode5TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=5UfA_aKBGMc" id="mobileLandscapeTrailerLink6" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode6"></span> <span id="mobileLandscapeEpisode6TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=sGbxmsDFVnE" id="mobileLandscapeTrailerLink7" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode7"></span> <span id="mobileLandscapeEpisode7TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=Q0CbN8sfihY" id="mobileLandscapeTrailerLink8" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode8"></span> <span id="mobileLandscapeEpisode8TitleShow"></span></div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=8Qn_spdM5Zg" id="mobileLandscapeTrailerLink9" class="d-none movie-container">
+              <div class="floatUp movieLink my-1 w-100"> <span id="mobileLandscapeEpisode9"></span> <span id="mobileLandscapeEpisode9TitleShow"></span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
 
   <!-- THIS SECTION ONLY SHOWS ON MOBILE -->
   <section class="mobile-mode d-none">
@@ -166,11 +304,11 @@
             <p> Climate: <span class="climate"> Unknown </span> </p>
             <p> Population: <span class="population"> Unknown </span> </p>
           </div>
-        </div>
+        </div> 
       </div>
 
       <!-- APPEARS ON MOVIES CARD SECTION -->
-      <div class="card pb-2">
+    Landscape  <div class="card pb-2">Landscape
         <div class="card-header" id="headingThree">
           <h5 class="mb-0 text-center">
             <button class="btn font-weight-bold accordian-btn collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
