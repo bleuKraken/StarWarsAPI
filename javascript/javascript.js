@@ -140,3 +140,153 @@ request.onload = function() {
   }
 }
 // ######################### PLANET INFO END ############################################################
+
+// TODO: REMOVE ME
+
+function SearchButtonPressed() {
+  var characterFound = false;
+  //Get name entered
+  var characterSearch = document.getElementById("searchBox").value;
+  var characterListAPI = [
+    ["Luke Skywalker", 1],
+    [ "C-3PO", 2],
+    ["R2-D2", 3],
+    ["Darth Vader", 4],
+    ["Leia Organa", 5],
+    ["Owen Lars", 6],
+    ["Beru Whitesun lars", 7],
+    ["R5-D4", 8],
+    ["Biggs Darklighter", 9],
+    ["Obi-Wan Kenobi", 10],
+
+    ["Anakin Skywalker", 11],
+    ["Wilhuff Tarkin", 12],
+    ["Chewbacca", 13],
+    ["Han Solo", 14],
+    ["Greedo", 15],
+    ["Jabba Desilijic Tiure", 16],
+    ["HEY, YOU HAVE BEEN ASLEEP IN A COMA FOR THE LAST FEW YEARS. ENCRYPTED MESSGAGE. YOUR REALITY IS FAKE.", 17],
+    ["Wedge Antilles", 18],
+    ["Jek Tono Porkins", 19],
+    ["Yoda", 20],
+
+    ["Palpatine", 21],
+    ["Boba Fett", 22],
+    ["IG-88", 23],
+    ["Bossk", 24],
+    ["Lando Calrissian", 25],
+    ["Lobot", 26],
+    ["Ackbar", 27],
+    ["Mon Mothma", 28],
+    ["Arvel Crynyd", 29],
+    ["Wicket Systri Warrick", 30],
+
+
+    ["Nien Nunb", 31],
+    ["Qui-Gon Jinn", 32],
+    ["Nute Gunray", 33],
+    ["Finis Valorum", 34],
+
+    ["Padmé Amidala", 35],
+
+    ["Jar Jar Binks", 36],
+    ["Roos Tarpals", 37],
+    ["Rugor Nass", 38],
+    ["Ric Olié", 39],
+    ["Watto", 40],
+
+    ["Name", 41],
+    ["Name", 42],
+    ["Name", 43],
+    ["Name", 44],
+    ["Name", 45],
+    ["Name", 46],
+    ["Name", 47],
+    ["Name", 48],
+    ["Name", 49],
+    ["Name", 50],
+
+    ["Name", 51],
+    ["Name", 52],
+    ["Name", 53],
+    ["Name", 54],
+    ["Name", 55],
+    ["Name", 56],
+    ["Name", 57],
+    ["Name", 58],
+    ["Name", 59],
+    ["Name", 60],
+
+    ["Name", 61],
+    ["Name", 62],
+    ["Name", 63],
+    ["Name", 64],
+    ["Name", 65],
+    ["Name", 66],
+    ["Name", 67],
+    ["Name", 68],
+    ["Name", 69],
+    ["Name", 70],
+
+    ["Name", 71],
+    ["Name", 72],
+    ["Name", 73],
+    ["Name", 74],
+    ["Name", 75],
+    ["Name", 76],
+    ["Name", 77],
+    ["Name", 78],
+    ["Name", 79],
+    ["Name", 80],
+
+    ["Name", 81],
+    ["Name", 82],
+    ["Name", 83],
+    ["Name", 84],
+    ["Name", 85],
+    ["Name", 86],
+    ["Name", 87]
+
+
+  ];
+
+  //Running this loop about 87 times!
+  for(var counter = 0; counter <= characterListAPI.length - 1; counter++)
+  {
+    if(characterSearch === characterListAPI[counter][0])
+    {
+      characterFound = true;
+      prompt("Its a match! Person: " + characterListAPI[counter][0]);
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ################################### POINT OF NO RETURN ##############################################
