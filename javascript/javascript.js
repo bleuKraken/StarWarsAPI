@@ -1,49 +1,21 @@
 const NUMBER_OF_DISPLAYS = 2;
 
-// ######################### PLANET INFO START #################################################################
-// API key and url
-var requestPlanetURL = "https://swapi.co/api/planets/1";
-// Have to make a new request
-var requestPlanet = new XMLHttpRequest();
-//I am going to GET, THIS URL
-requestPlanet.open('GET', requestPlanetURL);
-//What type is it?
-requestPlanet.responseType = 'text';
-//Send!
-requestPlanet.send();
 
-//Request fulfilled, whats happens on page load and when it returns?
-requestPlanet.onload = function() {
-  var planetDataResponse = requestPlanet.response;
-  var planetDataParsed = JSON.parse(planetDataResponse);
-  var planetDiameterKm = planetDataParsed.diameter;
-  var planetDiameterMi = planetDiameterKm / 1.609344;
-  planetDiameterMi = planetDiameterMi.toFixed(2);
+/*
+READ ME
+Idea - recreate javascript where on first load anykin skywaler loads.
 
-  var planetName = document.getElementsByClassName('planetName');
-  var planetTerrain = document.getElementsByClassName('terrain');
-  var planetDiameter = document.getElementsByClassName('planetDiameter');
-  var planetDiameterInMiles = document.getElementsByClassName('planetDiameterMi');
-  var planetDaysInYear = document.getElementsByClassName('daysInYear');
-  var planetHoursInDay = document.getElementsByClassName('hoursInDay');
-  var planetGravity = document.getElementsByClassName('gravity');
-  var planetClimate = document.getElementsByClassName('climate');
-  var planetPopulation = document.getElementsByClassName('population');
+Clicking on button generates random person.
 
-  /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
-  for (var counter = 0; counter <= NUMBER_OF_DISPLAYS; counter++) {
-    planetName[counter].innerHTML = planetDataParsed.name;
-    planetTerrain[counter].innerHTML = planetDataParsed.terrain;
-    planetDiameter[counter].innerHTML = planetDataParsed.diameter;
-    planetDiameterInMiles[counter].innerHTML = planetDiameterMi;
-    planetDaysInYear[counter].innerHTML = planetDataParsed.orbital_period;
-    planetHoursInDay[counter].innerHTML = planetDataParsed.rotation_period;
-    planetGravity[counter].innerHTML = planetDataParsed.gravity;
-    planetClimate[counter].innerHTML = planetDataParsed.climate;
-    planetPopulation[counter].innerHTML = planetDataParsed.population;
-  }
-}
-// ######################### PLANET INFO END #################################################################
+Clicking on search, loads with searched person.
+
+First load created 2 request,
+Second load would make 2 request as well.
+THird load would make another 2 request. 
+
+*/
+
+
 
 // ######################### CHARACTER INFO START ############################################################
 var characterPicker = (Math.floor(Math.random() * 89) + 1);
@@ -51,13 +23,39 @@ if (characterPicker == 17) {
   characterPicker += 1;
 }
 // API key and url
-var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
-//var requestURL = "https://swapi.co/api/people/2/"; //TODO: DELTE THIS, USE LINE ABOVE INSTEAD
 
-// Have to make a new request
-var request = new XMLHttpRequest();
-//I am going to GET, THIS URL
-request.open('GET', requestURL);
+var requestURL = "https://swapi.co/api/people/" + characterPicker + "/";
+var defaultrequestURL = "https://swapi.co/api/people/5/";
+
+var updatedRequestURL = " "; // Global variable, used for search action.
+
+
+
+
+
+var boolPlanetFound = false;
+var characterChosenPlanet;
+
+
+
+
+
+
+
+
+
+MyRequest();
+
+function MyRequest() {
+if (updatedRequestURL === " ") {
+  // Have to make a new request
+  var request = new XMLHttpRequest();
+  //I am going to GET, THIS URL
+  request.open('GET', requestURL);
+} else {
+  request.open('GET', updatedRequestURL);
+}
+
 //What type is it?
 request.responseType = 'text';
 //Send!
@@ -78,6 +76,9 @@ request.onload = function() {
   heightIn = heightIn.toFixed(2);
   massLb = massLb.toFixed(2)
   var filmTotal = dataParsed.films.length;
+  characterChosenPlanet = dataParsed.homeworld;
+
+
   //document.getElementsByClassName('name').innerHTML = dataParsed.name;
   var characterName = document.getElementsByClassName('name');
   var characterIdNumber = document.getElementsByClassName('character-id-number');
@@ -90,11 +91,134 @@ request.onload = function() {
   var characterSkin = document.getElementsByClassName('character-skin');
   var characterBirth = document.getElementsByClassName('character-birth');
   var characterGender = document.getElementsByClassName('character-gender');
+  var characterHomePlanet = document.getElementsByClassName('character-homePlanet');
 
   //Add names to classes. Two diffrent displays have the same name
   for (var counter = 0; counter <= 1; counter++) {
     characterName[counter].innerHTML = dataParsed.name;
+  }
 
+  var homePlanets = [
+    ["Tatooine", 1],
+    ["Alderaan", 2],
+    ["name", 3],
+    ["name", 4],
+    ["name", 5],
+    ["Bespin", 6],
+    ["Endor", 7],
+    ["Naboo", 8],
+    ["Coruscant", 9],
+    ["Kamino", 10],
+
+    ["Geonosis", 11],
+    ["Utapau", 12],
+    ["name", 13],
+    ["Kashyyyk", 14],
+    ["name", 15],
+    ["name", 16],
+    ["name", 17],
+    ["Cato Neimoidia", 18],
+    ["name", 19],
+    ["Stewjon", 20],
+
+    ["Eriadu", 21],
+    ["Corellia", 22],
+    ["Rodia", 23],
+    ["Nal Hutta", 24],
+    ["name", 25],
+    ["Bestine IV", 26],
+    ["name", 27],
+    ["name", 28],
+    ["Trandosha", 29],
+    ["Socorro", 30],
+
+    ["Mon Cala", 31],
+    ["Chandrila", 32],
+    ["Sullust", 33],
+    ["Toydaria", 34],
+    ["Malastare", 35],
+    ["Dathomir", 36],
+    ["Ryloth", 37],
+    ["Aleen Minor", 38],
+    ["Vulpter", 39],
+    ["Troiken", 40],
+
+    ["Tund", 41],
+    ["Haruun Kal", 42],
+    ["Cerea", 43],
+    ["Glee Anselm", 44],
+    ["Iridonia", 45],
+    ["Tholoth", 46],
+    ["Iktotch", 47],
+    ["Quermia", 48],
+    ["Dorin", 49],
+    ["Champala", 50],
+
+    ["Mirial", 51],
+    ["Serenno", 52],
+    ["Concord Dawn", 53],
+    ["Zolan", 54],
+    ["Ojom", 55],
+    ["Skako", 56],
+    ["Muunilinst", 57],
+    ["Shili", 58],
+    ["Kalee", 59],
+    ["Umbara", 60],
+
+    ["name", 61]
+  ];
+
+  //TODO: This checks if it is found, seems uneccasry but kinda does. Can be improved.
+    if (characterChosenPlanet) {
+      //planet found true
+      boolPlanetFound = true;
+    }
+
+  // Home planet is found
+  if (boolPlanetFound) {
+    // Making new request if planet is found
+    var requestPlanetURL = characterChosenPlanet;
+    // Have to make a new request
+    var requestPlanet = new XMLHttpRequest();
+    //I am going to GET, THIS URL
+    requestPlanet.open('GET', requestPlanetURL);
+    //What type is it?
+    requestPlanet.responseType = 'text';
+    //Send!
+    requestPlanet.send();
+
+    //Request fulfilled, whats happens on page load and when it returns?
+    requestPlanet.onload = function() {
+      var planetDataResponse = requestPlanet.response;
+      var planetDataParsed = JSON.parse(planetDataResponse);
+      var planetDiameterKm = planetDataParsed.diameter;
+      var planetDiameterMi = planetDiameterKm / 1.609344;
+      planetDiameterMi = planetDiameterMi.toFixed(2);
+
+      var planetName = document.getElementsByClassName('planetName');
+      var planetTerrain = document.getElementsByClassName('terrain');
+      var planetDiameter = document.getElementsByClassName('planetDiameter');
+      var planetDiameterInMiles = document.getElementsByClassName('planetDiameterMi');
+      var planetDaysInYear = document.getElementsByClassName('daysInYear');
+      var planetHoursInDay = document.getElementsByClassName('hoursInDay');
+      var planetGravity = document.getElementsByClassName('gravity');
+      var planetClimate = document.getElementsByClassName('climate');
+      var planetPopulation = document.getElementsByClassName('population');
+
+      /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
+      for (var counter = 0; counter <= NUMBER_OF_DISPLAYS; counter++) {
+        planetName[counter].innerHTML = planetDataParsed.name;
+        planetTerrain[counter].innerHTML = planetDataParsed.terrain;
+        planetDiameter[counter].innerHTML = planetDataParsed.diameter;
+        planetDiameterInMiles[counter].innerHTML = planetDiameterMi;
+        planetDaysInYear[counter].innerHTML = planetDataParsed.orbital_period;
+        planetHoursInDay[counter].innerHTML = planetDataParsed.rotation_period;
+        planetGravity[counter].innerHTML = planetDataParsed.gravity;
+        planetClimate[counter].innerHTML = planetDataParsed.climate;
+        planetPopulation[counter].innerHTML = planetDataParsed.population;
+        characterHomePlanet[counter].innerHTML = planetDataParsed.name;
+      }
+    }
   }
 
   /*Find each class and add content. Each class is used twice, once for desktop and one for mobile. */
@@ -139,17 +263,29 @@ request.onload = function() {
     }
   }
 }
-// ######################### PLANET INFO END ############################################################
+}
 
-// TODO: REMOVE ME
+// ######################### CHARACTER INFO END ############################################################
 
+
+
+
+
+
+
+
+
+// ############################## SEARCH FUNCTION, BUTTON PRESSED ############################################
 function SearchButtonPressed() {
+  updatedRequestURL = "nothing";
   var characterFound = false;
   //Get name entered
   var characterSearch = document.getElementById("searchBox").value;
+
+  // List of Planets.
   var characterListAPI = [
     ["Luke Skywalker", 1],
-    [ "C-3PO", 2],
+    ["C-3PO", 2],
     ["R2-D2", 3],
     ["Darth Vader", 4],
     ["Leia Organa", 5],
@@ -165,7 +301,7 @@ function SearchButtonPressed() {
     ["Han Solo", 14],
     ["Greedo", 15],
     ["Jabba Desilijic Tiure", 16],
-    ["HEY, YOU HAVE BEEN ASLEEP IN A COMA FOR THE LAST FEW YEARS. ENCRYPTED MESSGAGE. YOUR REALITY IS FAKE.", 17],
+    [" DAM, NOTHING HERE. WHO IS NUMBER 17?", 17],
     ["Wedge Antilles", 18],
     ["Jek Tono Porkins", 19],
     ["Yoda", 20],
@@ -186,102 +322,141 @@ function SearchButtonPressed() {
     ["Qui-Gon Jinn", 32],
     ["Nute Gunray", 33],
     ["Finis Valorum", 34],
-
     ["Padmé Amidala", 35],
-
     ["Jar Jar Binks", 36],
     ["Roos Tarpals", 37],
     ["Rugor Nass", 38],
     ["Ric Olié", 39],
     ["Watto", 40],
 
-    ["Name", 41],
-    ["Name", 42],
-    ["Name", 43],
-    ["Name", 44],
-    ["Name", 45],
-    ["Name", 46],
-    ["Name", 47],
-    ["Name", 48],
-    ["Name", 49],
-    ["Name", 50],
+    ["Sebulba", 41],
+    ["Quarsh Panaka", 42],
+    ["Shmi Skywalker", 43],
+    ["Darth Maul", 44],
+    ["Bib Fortuna", 45],
+    ["Ayla Secura", 46],
+    ["Ratts Tyerell", 47],
+    ["Dud Bolt", 48],
+    ["Gasgano", 49],
+    ["Ben Quadinaros", 50],
 
-    ["Name", 51],
-    ["Name", 52],
-    ["Name", 53],
-    ["Name", 54],
-    ["Name", 55],
-    ["Name", 56],
-    ["Name", 57],
-    ["Name", 58],
-    ["Name", 59],
-    ["Name", 60],
+    ["Mace Windu", 51],
+    ["Ki-Adi-Mundi", 52],
+    ["Kit Fisto", 53],
+    ["Eeth Koth", 54],
+    ["Adi Gallia", 55],
+    ["Saesee Tiin", 56],
+    ["Yarael Poof", 57],
+    ["Plo Koon", 58],
+    ["Mas Amedda", 59],
+    ["Gregar Typho", 60],
 
-    ["Name", 61],
-    ["Name", 62],
-    ["Name", 63],
-    ["Name", 64],
-    ["Name", 65],
-    ["Name", 66],
-    ["Name", 67],
-    ["Name", 68],
-    ["Name", 69],
-    ["Name", 70],
+    ["Cordé", 61],
+    ["Cliegg Lars", 62],
+    ["Poggle the Lesser", 63],
+    ["Luminara Unduli", 64],
+    ["Barriss Offee", 65],
+    ["Dormé", 66],
+    ["Dooku", 67],
+    ["Bail Prestor Organa", 68],
+    ["Jango Fett", 69],
+    ["Zam Wesell", 70],
 
-    ["Name", 71],
-    ["Name", 72],
-    ["Name", 73],
-    ["Name", 74],
-    ["Name", 75],
-    ["Name", 76],
-    ["Name", 77],
-    ["Name", 78],
-    ["Name", 79],
-    ["Name", 80],
+    ["Dexter Jettster", 71],
+    ["Lama Su", 72],
+    ["Taun We", 73],
+    ["Jocasta Nu", 74],
+    ["R4-P17", 75],
+    ["Wat Tambor", 76],
+    ["San Hill", 77],
+    ["Shaak Ti", 78],
+    ["Grievous", 79],
+    ["Tarfful", 80],
 
-    ["Name", 81],
-    ["Name", 82],
-    ["Name", 83],
-    ["Name", 84],
-    ["Name", 85],
-    ["Name", 86],
-    ["Name", 87]
-
-
+    ["Raymus Antilles", 81],
+    ["Sly Moore", 82],
+    ["Tion Medon", 83],
+    ["Finn", 84],
+    ["Rey", 85],
+    ["Poe Dameron", 86],
+    ["BB8", 87],
+    ["Captain Phasma", 88]
   ];
 
   //Running this loop about 87 times!
-  for(var counter = 0; counter <= characterListAPI.length - 1; counter++)
-  {
-    if(characterSearch === characterListAPI[counter][0])
-    {
+  for (var counter = 0; counter <= characterListAPI.length - 1; counter++) {
+    // If the character is found in the list
+    if (characterSearch === characterListAPI[counter][0]) {
+      //WHO THE SEARCH FOUND
       characterFound = true;
-      prompt("Its a match! Person: " + characterListAPI[counter][0]);
+
+      prompt("Its a match! Person: " + characterListAPI[counter][0] + ", Number: " + characterListAPI[counter][1]);
+      updatedRequestURL = "https://swapi.co/api/people/" + characterListAPI[counter][1] + "/";
+
+      prompt("New url: " + updatedRequestURL);
     }
   }
 
 
 
+
+ // MAKE ENTIRE NEW REQUEST
+ if(characterFound)
+ {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //Nothing found from loop
+  if (characterFound === false) {
+    //NOTHING FOUND IN SEARCH
+    prompt("No user named " + characterSearch);
+  }
+
+
+  return updatedRequestURL;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ############################# END, SEARCH FUNCTION BUTTON PRESSED ###########################
 
 
 
