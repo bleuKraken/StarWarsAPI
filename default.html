@@ -9,13 +9,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
-  <script src="javascript/javascript.js"></script>
   <title>StarWars Info</title>
 
-  <style type="text/css">
 
-
-  </style>
 </head>
 
 <body>
@@ -26,21 +22,33 @@
         Star Wars Character Data
       </h1>
     </div>
-      <div class="col">
-        <h4 class="name text-center font-weight-bold text-lg"> Name</h4>
+    <div class="row">
+      <div class="col d-flex justify-content-around">
+        <h4 class="name text-center font-weight-bold text-lg p-2"> Name</h4>
         <div class="text-center">
           <div class="button-background text-center">
-            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
-          </div>
-          <div class="form-group d-flex justify-content-around">
-            <input type="text" id="searchBox" class="form-control ml-5 mr-3" placeholder="Search..">
-            <button type="button" class="p-2 bg-dark mr-5 border border-outline-primary text-light" value="" onClick="SearchButtonPressed()">Search
-            </button>
-
+            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="ButtonReload();">Pick Random</button>
           </div>
         </div>
       </div>
+    </div>
+
+
   </header>
+<div class="container">
+  <div class="row m-0">
+    <div class="col">
+      <div class="form-group d-block text-center m-0">
+        <div class="autocomplete">
+          <input type="text" id="myInput" class="myInput form-control" placeholder="Search..">
+        </div>
+        <button type="button" class="px-3 py-2 ml-1 bg-dark border border-outline-primary text-light" value="SearchBar" onClick="SearchButtonPressed();">Search
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <!-- THIS SECTION ONLY SHOWS ON DESKTOP MODE -->
   <!-- SECTION INFO OF CHARACTER -->
@@ -114,17 +122,19 @@
 
   <!-- THIS SECTION ONLY SHOWS ON MOBILE LANDSCAPE -->
   <section class="mobile-landscape-mode d-none">
-    <!-- SECTION HEADER -->
+    <!-- SECTION HEADER
     <header class="container">
-      <div class="row">
-        <div class="col pt-2 d-flex justify-content-around">
+      <div class="row border">
+        <div class="col pt-2 d-flex justify-content-around ">
           <h4 class="name font-weight-bold text-lg m-2"> Name</h4>
-          <div class="button-background text-center">
-            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="window.location.reload();">Generate New Character</button>
+          <div class="button-background text-center border">
+            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="ButtonReload();">Generate New Character</button>
           </div>
         </div>
       </div>
+
     </header>
+  -->>
     <!-- ACCORDIAN -->
     <div id="accordionMobileLandscape">
       <!-- CARD TITLES AND BUTTONS -->
@@ -329,6 +339,9 @@
   <!-- CHARCTER STATS GENERATE episodePicker-->
   <script>
   </script>
+
+  <script src="javascript/javascript.js"></script>
+
 
   <!-- FONT AWSOME -->
   <script src="https://kit.fontawesome.com/10a1582225.js"></script>
