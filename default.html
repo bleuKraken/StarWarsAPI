@@ -10,15 +10,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
   <title>StarWars Info</title>
-
-
 </head>
 
-<body>
-  <!--
-TODO: fix mobile background moving when keyboard pulls up
-TODO: fix having to double click on mobile.
-  -->
+<body id="background-image">
   <!-- STORY BEGINS HERE -->
   <header id="header-info" class="container">
     <div id="header-title" class="row d-block text-center">
@@ -36,23 +30,22 @@ TODO: fix having to double click on mobile.
         </div>
       </div>
     </div>
-
-
   </header>
-<div class="container">
-  <div class="row m-0">
-    <div class="col">
-      <div class="form-group d-block text-center m-0">
-        <div class="autocomplete">
-          <input type="text" id="myInput" class="myInput form-control" placeholder="Search..">
+
+  <!-- ROW OF SEARCH BAR -->
+  <div class="container">
+    <div class="row m-0">
+      <div class="col">
+        <div class="form-group d-block text-center m-0">
+          <div class="autocomplete">
+            <input type="text" id="myInput" class="myInput form-control" placeholder="Search..">
+          </div>
+          <button type="button" class="px-3 py-2 ml-1 bg-dark border border-outline-primary text-light" value="SearchBar" onClick="SearchButtonPressed();">Search
+          </button>
         </div>
-        <button type="button" class="px-3 py-2 ml-1 bg-dark border border-outline-primary text-light" value="SearchBar" onClick="SearchButtonPressed();">Search
-        </button>
       </div>
     </div>
   </div>
-</div>
-
 
   <!-- THIS SECTION ONLY SHOWS ON DESKTOP MODE -->
   <!-- SECTION INFO OF CHARACTER -->
@@ -88,7 +81,6 @@ TODO: fix having to double click on mobile.
         <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
         <p> Gender: <span class="character-gender"> Unknown </span> </p>
         <p> Home Planet: <span class="character-homePlanet"> Unknown </span> </p>
-
       </div>
       <!-- col FILMS DATA -->
       <div class="col-md-4 order-md-3 order-3 border-blue filmList pt-5">
@@ -126,19 +118,6 @@ TODO: fix having to double click on mobile.
 
   <!-- THIS SECTION ONLY SHOWS ON MOBILE LANDSCAPE -->
   <section class="mobile-landscape-mode d-none">
-    <!-- SECTION HEADER
-    <header class="container">
-      <div class="row border">
-        <div class="col pt-2 d-flex justify-content-around ">
-          <h4 class="name font-weight-bold text-lg m-2"> Name</h4>
-          <div class="button-background text-center border">
-            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="ButtonReload();">Generate New Character</button>
-          </div>
-        </div>
-      </div>
-
-    </header>
-  -->>
     <!-- ACCORDIAN -->
     <div id="accordionMobileLandscape">
       <!-- CARD TITLES AND BUTTONS -->
@@ -264,7 +243,6 @@ TODO: fix having to double click on mobile.
             <p> Birth Year: <span class="character-birth"> Unknown</span> </p>
             <p> Gender: <span class="character-gender"> Unknown </span> </p>
             <p> Home Planet: <span class="character-homePlanet"> Unknown </span> </p>
-
           </div>
         </div>
       </div>
@@ -340,13 +318,7 @@ TODO: fix having to double click on mobile.
     </div>
   </section>
 
-  <!-- CHARCTER STATS GENERATE episodePicker-->
-  <script>
-  </script>
-
   <script src="javascript/javascript.js"></script>
-
-
   <!-- FONT AWSOME -->
   <script src="https://kit.fontawesome.com/10a1582225.js"></script>
   <!-- jquery -->
