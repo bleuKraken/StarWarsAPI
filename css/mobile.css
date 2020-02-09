@@ -1,0 +1,95 @@
+
+/* ################# MOBILE LANDSCAPE ########################### */
+@media screen and (min-width: 566px) and (max-width: 812px) {
+  .mobile-landscape-mode {
+    display: block !important;
+    border-bottom: 2px solid #15509F;
+  }
+
+  #header-title {
+    display: none !important;
+  }
+
+  #header-info {
+    margin-top: 5px;
+  }
+
+  #header div {
+    margin-top: -25px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .btn-generate-new {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border: 1px solid #A1A332;
+  }
+
+  .card {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .card-body {
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+  }
+
+  .header-text {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .desktop-mode {
+    display: none;
+  }
+
+  .border-blue {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .card {
+    font-size: 1.1rem;
+  }
+}
+
+/* ################# MOBILE ########################### */
+@media screen and (max-width: 565px) {
+  .desktop-mode {
+    display: none;
+  }
+
+  .mobile-mode {
+    display: block !important;
+    border-bottom: 2px solid #15509F;
+    margin-top: 10px;
+  }
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .btn-generate-new {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  #header div {
+    margin-top: -25px;
+  }
+
+  .header-text {
+    font-size: 2rem;
+  }
+
+  .border-blue {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .card {
+    font-size: 1.1rem;
+  }
+}

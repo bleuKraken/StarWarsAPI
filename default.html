@@ -12,8 +12,9 @@
   <title>StarWars Info</title>
 </head>
 
-<body id="background-image">
+<body class="background-image">
   <!-- STORY BEGINS HERE -->
+  <!-- Header -->
   <header id="header-info" class="container">
     <div id="header-title" class="row d-block text-center">
       <h1 class="px-2 pt-2 header-text">
@@ -22,29 +23,22 @@
     </div>
     <div class="row">
       <div class="col d-flex justify-content-around">
-        <h4 class="name text-center font-weight-bold text-lg p-2"> Name</h4>
-        <div class="text-center">
-          <div class="button-background text-center">
-            <button type="button" class="btn-generate-new" value="Refresh Page" onClick="ButtonReload();">Pick Random</button>
-          </div>
+        <h4 class="name text-lg p-2"> Name</h4>
+        <!-- <div class="text-center bg-warning">  DELETE IF NOT NEEDED-->
+        <div class="button-background text-center">
+          <button type="button" class="btn-generate-new" value="Refresh Page" onClick="ButtonReload();">Pick Random</button>
         </div>
+        <!-- </div> DELETE IF NOT NEEDED -->
       </div>
     </div>
   </header>
 
-  <!-- ROW OF SEARCH BAR -->
-  <div class="container">
-    <div class="row m-0">
-      <div class="col">
-        <div class="form-group d-block text-center m-0">
-          <div class="autocomplete">
-            <input type="text" id="myInput" class="myInput form-control" placeholder="Search..">
-          </div>
-          <button type="button" class="px-3 py-2 ml-1 bg-dark border border-outline-primary text-light" value="SearchBar" onClick="SearchButtonPressed();">Search
-          </button>
-        </div>
-      </div>
+  <!-- Row: Search Bar -->
+  <div class=" d-block text-center m-0">
+    <div class="search-input"> <!-- Class was named: autocomplete  TODO: Delete this comment if not needed -->
+      <input type="text" id="myInput" class="myInput form-control" placeholder="Search..">
     </div>
+    <button type="button" class="px-3 py-2 ml-1 bg-dark border border-outline-primary text-light" value="SearchBar" onClick="SearchButtonPressed();">Search</button>
   </div>
 
   <!-- THIS SECTION ONLY SHOWS ON DESKTOP MODE -->
